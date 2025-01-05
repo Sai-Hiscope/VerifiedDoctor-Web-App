@@ -1,4 +1,4 @@
-# My React Vite App
+# VerifiedDoctor-Web-App
 
 This project is a React application set up with Vite. Follow the instructions below to get started after cloning the repository.
 

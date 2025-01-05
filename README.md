@@ -37,4 +37,4 @@ This project is a React application set up with Vite. Follow the instructions be
    npm run dev
    ```
 
-   The app should now be running at `http://localhost:3000` (or a different port specified in the terminal output).
+   The app should now be running at `http://localhost:portNumber` (or a different port specified in the terminal output).

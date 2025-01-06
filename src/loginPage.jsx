@@ -45,8 +45,10 @@ const Login = () => {
       if (result && result.length > 0) {
         const user = result[0];
         if (user.email.trim() === formData.email && user.password.trim() === formData.password) {
-          alert("Login successful!");
+          // alert("Login successful!");
           setFormData({ username: "", email: "", password: "" });
+          window.alert(`WELCOME ${username} Registration successful! FINISH THE VERIFICATION FORM`);
+        navigate("/doctorVerificationpage");
         } else {
           alert("Invalid email or password.");
         }
@@ -83,10 +85,10 @@ const Login = () => {
       });
 
       if (response.ok) {
+        alert("registration successful");
         setFormData({ username: "", email: "", password: "" });
         setRole("");
-        window.alert(`WELCOME ${username} Registration successful! FINISH THE VERIFICATION FORM`);
-        navigate("/doctorVerificationpage");
+        
       }
     } catch (error) {
       console.error("Registration error:", error);
@@ -97,6 +99,7 @@ const Login = () => {
   const showLogin = () => {
     setActiveTab("login");
     setRole("");
+
   };
 
   const showRegister = () => {

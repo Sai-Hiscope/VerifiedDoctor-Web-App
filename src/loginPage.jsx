@@ -10,13 +10,18 @@ import FounderPage from "./ourFoundersPage";
 import MainHeader from './header';
 import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
 import Googlelogo from "./assets/icons/google.png";
+import { useNavigate } from 'react-router-dom';
 
 const API_URL = "https://v1.nocodeapi.com/msk/google_sheets/lXGzPhZBjTOdSNNH";
 const tabId = "Sheet1";
 
 const Login = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("login");
   const [role, setRole] = useState("");
+
+  const [username, setUsername] = useState('');
+
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -102,6 +107,20 @@ const Login = () => {
   const showUserForm = () => setRole("user");
   const goBack = () => setRole("");
 
+
+  const goBack = () => {
+    setRole(""); // Reset role to go back to role selection
+  };
+
+  const handleInputChange = (e) => { 
+    setUsername(e.target.value);
+   };
+  const registerDoctor = (e) => {
+     e.preventDefault(); // Show the username in a window alert 
+     window.alert(`WELCOME ${username} FINISH THE VERIFICATION FORM`);
+     navigate("/doctorVerificationpage");
+    };
+
   return (
     <>
       <MainHeader />
@@ -120,7 +139,22 @@ const Login = () => {
           <button className={`tab-btn ${activeTab === "register" ? "active" : ""}`} onClick={showRegister}>
             Register
           </button>
+   
+      {/* User Registration Form */}
+      {role === "user" && (
+        <div className="form-container">
+          <h2>User Registration</h2>
+          <form action="#" onSubmit={registerDoctor}>
+            <input type="text" placeholder="Username" required  id="username" name="username" value={username} onChange={handleInputChange}/>
+            <input type="email" placeholder="Email" required />
+            <input type="password" placeholder="Password" required />
+            <button type="submit">Register</button>
+          </form>
+          <button className="role-btn" onClick={goBack}>Back</button>
         </div>
+      )}
+      </div>
+
 
         {activeTab === "login" && (
           <div className="form-container">

@@ -1,5 +1,5 @@
 // API configuration
-const API_URL = "https://v1.nocodeapi.com/xmas/google_sheets/CpGmSyExVNUFROFT";
+const API_URL = "https://v1.nocodeapi.com/msk/google_sheets/lXGzPhZBjTOdSNNH";
 const tabId = "Sheet1";
 
 // Function to get all users
@@ -34,8 +34,10 @@ async function registerUser() {
     const name = document.getElementById("regName").value.trim();
     const email = document.getElementById("regEmail").value.trim();
     const password = document.getElementById("regPassword").value.trim();
+    const profession = document.getElementById("regProfession").value.trim(); // Get profession value
 
-    if (!name || !email || !password) {
+    // Validate that all fields are filled
+    if (!name || !email || !password || !profession) {
         alert("All fields are required for registration.");
         return;
     }
@@ -69,7 +71,7 @@ async function registerUser() {
             method: "POST",
             headers: myHeaders,
             redirect: "follow",
-            body: JSON.stringify([[name, email, password]])
+            body: JSON.stringify([[profession, name, email, password]]) // Updated to include profession
         };
 
         const registerResponse = await fetch(`${API_URL}?tabId=${tabId}`, requestOptions);
@@ -86,6 +88,7 @@ async function registerUser() {
         registerBtn.textContent = "Register";
     }
 }
+
 
 
 // Function to handle login

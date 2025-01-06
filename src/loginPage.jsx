@@ -45,8 +45,7 @@ const Login = () => {
   const goBack = () => {
     setRole(""); // Reset role to go back to role selection
   };
-
-  const handleInputChange = (e) => { 
+  const handleInputChange1 = (e) => { 
     setUsername(e.target.value);
    };
   const registerDoctor = (e) => {
@@ -144,7 +143,7 @@ const Login = () => {
         <div className="form-container">
           <h2>User Registration</h2>
           <form action="#" onSubmit={registerDoctor}>
-            <input type="text" placeholder="Username" required  id="username" name="username" value={username} onChange={handleInputChange}/>
+            <input type="text" placeholder="Username" required  id="username" name="username" value={username} onChange={handleInputChange1}/>
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Password" required />
             <button type="submit">Register</button>

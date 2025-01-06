@@ -1,174 +1,207 @@
+/* Base styles */
 
+.login-container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 260px;
+  z-index: 1;
+}
 
-.login-container{
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    width: 100%;
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    height: 260px;
-    z-index: 1;
-  }
-  
- 
-  .header-section {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 10;
-    min-height: 341px;
-    width: 100%;
-    color: #000;
-    text-align: center;
-    padding: 12px 1px 67px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 16px;
-  }
-  
-  .background-image-header{
-    position: absolute;
-    inset: 0;
-    height: 250px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;   
-  }
-  
-  .nav-container {
-    position: relative;
-    align-self: center;
-    display: flex;
-    width: 100%;
-    max-width: 1470px;
-    gap: 10px;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  .nav-container img{
-    background: #dababa00;
+.header-section {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+  min-height: 341px;
+  width: 100%;
+  color: #000;
+  text-align: center;
+  padding: 12px 1px 67px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+}
 
-  }
+.background-image-header {
+  position: absolute;
+  inset: 0;
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
 
-  .headerlogo-link{
-    position: relative;
-    left: 30px;
-    top: 16px;
-    overflow: hidden;
-    border-radius: 30px;
-  }
-  
+.nav-container {
+  position: relative;
+  align-self: center;
+  display: flex;
+  width: 100%;
+  max-width: 1470px;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.nav-container img {
+  background: #dababa00;
+}
+
+.headerlogo-link {
+  position: relative;
+  left: 30px;
+  top: 16px;
+  overflow: hidden;
+  border-radius: 30px;
+}
+
 .header-logo {
-    width: 110px; /* Adjust the width as needed */
+  width: 110px;
+  /* Adjust the width as needed */
   height: auto;
   position: relative;
   left: 25px;
   top: 15px;
-  }
+}
 
-  .header-logo:hover{
-    opacity: 0.8;
-    background-color: rgba(150, 199, 245, 0);
-  }
-  
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    margin: auto 0;
-    position: absolute;
-    top: 60px;
-    left: 170px; 
-  }
-  
-  .login-button-header{
-    padding: 8px 15px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #5c5959;
-    border: 2px solid #5c5959;
-    color: #fffffff3;
-    transition: opacity 0.3s ease;
-    position: relative;
-    right: 2rem;
-    top: 0.5rem;
-    height: 2.5rem;
-    box-shadow: 3px  2px 10px #817f7f ;
-    
-  }
+.header-logo:hover {
+  opacity: 0.8;
+  background-color: rgba(150, 199, 245, 0);
+}
 
-  
-  .login-button-header:hover {
-    /* opacity: 0.8; */
-    color: white;
-    background-color: rgb(77, 101, 207);
-    border: 2px solid rgb(13, 46, 194);
- 
-  }
-  .login-button-header:focus {
-    border: 1px solid rgb(13, 46, 194);
-    box-shadow: 2px  2px 10px #817f7f ;
-  }
-  
-  .nav-links {
-    align-self: start;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    align-self: stretch;
-    margin: auto 0;
-    color: var(--text-color);
-    font-weight: 500;
-  }
-  .login-button:hover {
-    background-color: #3985dc;
-    color: white;
-    font-weight: 400;
-  }
-  
-  .login-button:hover {
-    background-color: #3985dc;
-  }
-  
-  .nav-links {
-    align-self: start;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    font-weight: 700;
-    flex-wrap: wrap;
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+  position: absolute;
+  top: 60px;
+  left: 170px;
+}
 
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    align-self: stretch;
-    margin: auto 0;
-    color: #000000;
-    font-weight: 600;
-  }
-  
-  .nav-link:hover {
-    color: #0c29e9;
-    text-decoration: underline;
-    transition-duration: 0.15s;
-  }
-  
-  .sos-link {
-    color: red;
-    /* text-decoration: underline; */
-  }
-  .sos-link:hover{
+.login-button-header {
+  padding: 8px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #5c5959;
+  border: 2px solid #5c5959;
+  color: #fffffff3;
+  transition: opacity 0.3s ease;
+  position: relative;
+  right: 2rem;
+  top: 0.5rem;
+  height: 2.5rem;
+  box-shadow: 3px 2px 10px #817f7f;
+}
+
+.login-button-header:hover {
+  color: white;
+  background-color: rgb(77, 101, 207);
+  border: 2px solid rgb(13, 46, 194);
+}
+
+.login-button-header:focus {
+  border: 1px solid rgb(13, 46, 194);
+  box-shadow: 2px 2px 10px #817f7f;
+}
+
+.nav-links {
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  align-self: stretch;
+  margin: auto 0;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.login-button:hover {
+  background-color: #3985dc;
+  color: white;
+  font-weight: 400;
+}
+
+.login-button:hover {
+  background-color: #3985dc;
+}
+
+.nav-links {
+  align-self: start;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  align-self: stretch;
+  margin: auto 0;
+  color: #000000;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #0c29e9;
+  text-decoration: underline;
+  transition-duration: 0.15s;
+}
+
+.sos-link {
+  color: red;
+}
+
+.sos-link:hover {
   color: red;
   text-decoration: underline;
+}
+
+/* Media queries */
+
+/* For screens less than 600px */
+@media only screen and (max-width: 600px) {
+  .header-section {
+    font-size: 14px;
+    padding: 8px 1px 50px;
   }
-  
-  
+  .nav-menu {
+    left: 10px;
+    top: 50px;
+  }
+}
+
+/* For screens less than 768px */
+@media only screen and (max-width: 768px) {
+  .header-section {
+    font-size: 14px;
+    padding: 10px 1px 55px;
+  }
+  .nav-menu {
+    left: 20px;
+    top: 55px;
+  }
+}
+
+/* For screens less than 1024px */
+@media only screen and (max-width: 1024px) {
+  .header-section {
+    font-size: 15px;
+    padding: 12px 1px 60px;
+  }
+  .nav-menu {
+    left: 50px;
+    top: 58px;
+  }
+}

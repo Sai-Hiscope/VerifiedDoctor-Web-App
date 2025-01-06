@@ -14,11 +14,15 @@ import FounderPage from "./ourFoundersPage";
 import MainHeader from './header';
 import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
 import Googlelogo from "./assets/icons/google.png";
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
+  const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("login");
   const [role, setRole] = useState("");
+  const [username, setUsername] = useState('');
+ 
 
   const showLogin = () => {
     setActiveTab("login");
@@ -41,6 +45,15 @@ const Login = () => {
   const goBack = () => {
     setRole(""); // Reset role to go back to role selection
   };
+
+  const handleInputChange = (e) => { 
+    setUsername(e.target.value);
+   };
+  const registerDoctor = (e) => {
+     e.preventDefault(); // Show the username in a window alert 
+     window.alert(`WELCOME ${username} FINISH THE VERIFICATION FORM`);
+     navigate("/doctorVerificationpage");
+    };
   return (
     
     <>
@@ -116,11 +129,11 @@ const Login = () => {
       {role === "doctor" && (
         <div className="form-container">
           <h2>Doctor Registration</h2>
-          <form action="#">
+          <form onSubmit={registerDoctor} >
             <input type="text" placeholder="Doctor's Name" required />
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Password" required />
-            <button type="submit">Register</button>
+            <button >Register</button>
           </form>
           <button className="role-btn" onClick={goBack}>Back</button>
         </div>
@@ -130,8 +143,8 @@ const Login = () => {
       {role === "user" && (
         <div className="form-container">
           <h2>User Registration</h2>
-          <form action="#">
-            <input type="text" placeholder="Username" required />
+          <form action="#" onSubmit={registerDoctor}>
+            <input type="text" placeholder="Username" required  id="username" name="username" value={username} onChange={handleInputChange}/>
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Password" required />
             <button type="submit">Register</button>

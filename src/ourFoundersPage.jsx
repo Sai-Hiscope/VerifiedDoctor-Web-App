@@ -12,7 +12,7 @@ import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
 
 
 // Image imports
-import Anji from "./assets/Images/foundersImg/Anji.jpg";
+import Anji from "./assets/Images/foundersImg/anji.jpg";
 
 import Alekhya from "./assets/Images/foundersImg/alekhya.jpg";
 import Bhadru from "./assets/Images/foundersImg/bhadru.jpg";

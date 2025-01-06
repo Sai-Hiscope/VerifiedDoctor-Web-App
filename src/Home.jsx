@@ -419,8 +419,8 @@ function Homepage() {
 
   <div className="home-footer-div1">
   <img
-         src={VDrLogo}
-         alt="VDrapp Footer Logo"
+          src={VDrLogo}
+          alt="VDrapp Footer Logo"
           className="home-footer-logo"
         />
  </div>

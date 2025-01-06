@@ -23,15 +23,7 @@ const FindDoctorPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedState.toLowerCase() === "andhra pradesh" && selectDoctor.toLowerCase() === "cardiologist") {
-      setPrint("Andhra Pradesh Cardiologist");
-    } 
-    else if (selectedState.toLowerCase() === "andhra pradesh" && selectDoctor.toLowerCase() === "dermatologist") {
-      setPrint("Andhra Pradesh Dermatologist");
-    }
-    else {
-      setPrint("No doctors found");
-    }
+    setPrint(`welcome ${selectedState} ${selectDoctor}`);
   };
 
   

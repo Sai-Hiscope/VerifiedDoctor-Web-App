@@ -53,6 +53,7 @@ const DoctorVerification = () => {
     e.preventDefault();
     // Logic for form submission
     console.log(formData);
+    alert("VERIFICATION SUBMITTED");
     navigate("/demoPage");
   };
      

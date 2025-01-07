@@ -20,7 +20,6 @@ const Login = () => {
   const [activeTab, setActiveTab] = useState("login");
   const [role, setRole] = useState("");
 
-  const [username, setUsername] = useState('');
 
   const [formData, setFormData] = useState({
     username: "",
@@ -47,7 +46,7 @@ const Login = () => {
         if (user.email.trim() === formData.email && user.password.trim() === formData.password) {
           // alert("Login successful!");
           setFormData({ username: "", email: "", password: "" });
-          window.alert(`WELCOME ${username} Registration successful! FINISH THE VERIFICATION FORM`);
+          window.alert(`WELCOME LOGIN SUCCESFULLY! FINISH THE VERIFICATION FORM`);
         navigate("/doctorVerificationpage");
         } else {
           alert("Invalid email or password.");
@@ -138,7 +137,7 @@ const Login = () => {
         <div className="form-container">
           <h2>User Registration</h2>
           <form action="#">
-            <input type="text" placeholder="Username" required  id="username" name="username" value={username} onChange={handleInputChange}/>
+            <input type="text" placeholder="Username" required />
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Password" required />
             <button type="submit">Register</button>

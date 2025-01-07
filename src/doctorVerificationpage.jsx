@@ -6,12 +6,15 @@ import Login from "./loginPage";
 import IndividualRegisterPage from "./individualRegisterPage";
 import SosPage from "./sosPage";
 import DoctorRegisterPage from "./doctorRegisterPage";
+import Demo from "./demoPage"
+import { useNavigate } from 'react-router-dom';
 import MainHeader from "./header";
 import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
 
 
 const DoctorVerification = () => {
   const [count, setCount] = useState(0)
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     medicalLicenseNumber: '',
@@ -50,6 +53,7 @@ const DoctorVerification = () => {
     e.preventDefault();
     // Logic for form submission
     console.log(formData);
+    navigate("/demoPage");
   };
      
 

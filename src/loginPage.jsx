@@ -133,18 +133,6 @@ const Login = () => {
           </button>
    
       {/* User Registration Form */}
-      {role === "user" && (
-        <div className="form-container">
-          <h2>User Registration</h2>
-          <form action="#">
-            <input type="text" placeholder="Username" required />
-            <input type="email" placeholder="Email" required />
-            <input type="password" placeholder="Password" required />
-            <button type="submit">Register</button>
-          </form>
-          <button className="role-btn" onClick={goBack}>Back</button>
-        </div>
-      )}
       </div>
 
 

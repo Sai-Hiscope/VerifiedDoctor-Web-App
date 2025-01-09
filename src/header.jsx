@@ -33,7 +33,7 @@ const MainHeader = () => {
                 <Link to="/doctorVerificationpage" className="nav-link">Verify a Doctor</Link>
                 <Link to="/sosPage" className="nav-link sos-link">SOS</Link>
                 <Link to="/demoPage" className="nav-link">Home Delivery Medicines</Link>
-                <Link to="/demoPage" className="nav-link">Micro Insurance</Link>
+                <Link to="/insurancePage" className="nav-link">Micro Insurance</Link>
                 <Link to="/demoPage" className="nav-link">Regular Insurance</Link>
                 <Link to="/founderPage" className="nav-link">Founder Page</Link>
               </div>

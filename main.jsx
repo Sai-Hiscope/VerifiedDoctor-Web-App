@@ -10,6 +10,7 @@ import SosPage from "./src/sosPage";
 import DoctorRegisterPage from "./src/doctorRegisterPage";
 import FounderPage from "./src/ourFoundersPage";
 import HomeDeliveryMedicine from "./src/demoPage";
+import Insurance from "./src/insurancePage";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
     path: "/FounderPage",
     element: <FounderPage />,
   },  
+  {
+    path : "/insurancePage",
+    element:<Insurance />,
+  },
   {
     path: "/demoPage",
     element: <HomeDeliveryMedicine />,

@@ -1,0 +1,198 @@
+
+  
+ .pagecount{
+  line-height: 15px;
+    color: black;
+    position: relative;
+    left: 13rem;
+    top: 3.5rem;
+    width: 450px;
+    color: rgba(10, 228, 10, 0.938);
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .Insurancecontainer{
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
+    width: 900px;
+    position: absolute;
+    left: 380px;
+    top: 300px;
+    height: 750px;
+    background-color: rgba(243, 206, 252, 0.356);
+  }
+  
+  
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #faa80f;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .pagination button.disabled {
+    background-color: #eecb8970;
+    cursor: not-allowed;
+  }
+
+ 
+
+  
+  @media (prefers-color-scheme: light) {
+    :root {
+      color: #213547;
+      background-color: #ffffff;
+    }
+    a:hover {
+      color: #747bff;
+    }
+    button {
+      background-color: #f9f9f9;
+    }
+  }
+  
+
+  .home-footer{
+    top: 1100px;
+  }
+
+
+  /* page0 */
+
+  .insurancefrompage0-div1{
+    position: relative;
+    left: 10px;
+    justify-content: start;
+  }
+
+  .Insuranceform0-group-div{
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    
+  }
+  
+  .Insuranceform-group {
+    margin: 5px;
+    list-style: none;
+    width: 50%;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    border-right: 0.5px solid rgb(219, 216, 216);
+    padding-left: 20px;
+   
+  }
+
+  .Insuranceform-group label{
+    margin-bottom: 5px;
+    position: relative;
+    top: 5px;
+    width: 150px;
+    display: flex;
+  }
+  
+  span{
+    position: relative;
+    left: 100%;
+    color: red;
+    font-weight: 900;
+  }
+  .Insuranceform-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .Insuranceform-group1 {
+    margin-bottom: 15px;
+    list-style: none;
+    width: 50%;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+  }
+  
+  .Insuranceform-group1 label{
+    margin-bottom: 5px;
+    position: relative;
+    top: 5px;
+    width: 150px;
+    display: flex;
+  }
+  
+  .Insuranceform-group1 input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  #Address{
+    height: 80px;
+    width: 100%;
+    resize: none;
+  }
+
+
+
+  .gender-li input{
+   display: flex;
+  }
+  .gender-input-li{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+  }
+  #gender{
+    display: flex;
+    height: 10px;
+    width: 10px;
+  }
+
+  .insurance-page0-policy-div{
+    display: flex;
+    justify-content: start;
+  }
+
+  .insurance-page0-policy-div li{
+    list-style: none;
+    position: relative;
+    padding-left: 10px;
+    padding-right: 50px;  
+    
+  }
+
+  .insurance-page0-check-div{
+    padding-top: 10px;
+    
+  }
+  .insurance-page0-check-div li{
+    list-style: none;
+    display: flex;
+    gap: 5px;
+    padding-bottom: 5px;
+  }
+  .insurance-page0-check-div li p{
+    gap: 0px;
+    font-weight: 100;
+    font-size: 10px;
+  line-height: 1.5;
+    
+  }

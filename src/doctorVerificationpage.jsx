@@ -51,13 +51,74 @@ const DoctorVerification = () => {
   };
 
   // Handle form submit to send data to Google Sheets
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Logic for form submission
-    console.log(formData);
-    alert("VERIFICATION SUBMITTED");
-    navigate("/demoPage");
-  };
+    // Handle form submit to send data to Google Sheets
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      
+      try {
+        // Convert file data to base64 if needed
+        const getBase64 = (file) => {
+          return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+            reader.onload = () => resolve(reader.result.split(',')[1]);
+            reader.onerror = error => reject(error);
+          });
+        };
+  
+        // Prepare file data
+        const medicalLicenseBase64 = formData.medicalLicense ? await getBase64(formData.medicalLicense) : '';
+        const boardCertificateBase64 = formData.boardCertificate ? await getBase64(formData.boardCertificate) : '';
+        const educationCertificatesBase64 = formData.educationCertificates ? await getBase64(formData.educationCertificates) : '';
+  
+        // Prepare data for Google Sheets
+        const rowData = [
+          [
+            formData.fullName,
+            formData.medicalLicenseNumber,
+            medicalLicenseBase64,
+            formData.medicalSpecialty,
+            boardCertificateBase64,
+            formData.educationBackground,
+            educationCertificatesBase64,
+            formData.hospitalWorking,
+            formData.experience,
+            formData.hospitalClinic,
+            formData.complaints,
+            formData.description,
+            new Date().toISOString() // Timestamp
+          ]
+        ];
+  
+        // API request headers
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+  
+        // API request options
+        const requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          redirect: "follow",
+          body: JSON.stringify(rowData)
+        };
+  
+        // Send data to Google Sheets
+        const response = await fetch(`${API_URL}?tabId=${tabId}`, requestOptions);
+        const result = await response.text();
+        
+        if (response.ok) {
+          alert("Verification submitted successfully!");
+          navigate("/demoPage");
+        } else {
+          throw new Error('Failed to submit form');
+        }
+  
+      } catch (error) {
+        console.error('Error:', error);
+        alert("Error submitting verification. Please try again.");
+      }
+    };
+  
      
 
   return (
@@ -107,7 +168,7 @@ const DoctorVerification = () => {
                 id="medical-license"
                 name="medicalLicense"
                 onChange={handleFileChange}
-                required
+                // required
               />
             </div>
 
@@ -130,7 +191,7 @@ const DoctorVerification = () => {
                 id="board-certificate"
                 name="boardCertificate"
                 onChange={handleFileChange}
-                required
+                // required
               />
             </div>
 
@@ -153,7 +214,7 @@ const DoctorVerification = () => {
                 id="education-certificates"
                 name="educationCertificates"
                 onChange={handleFileChange}
-                required
+                // required
               />
             </div>
 

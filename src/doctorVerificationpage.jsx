@@ -15,7 +15,7 @@ const API_URL = "https://v1.nocodeapi.com/sandeephst/google_sheets/zUIvNpLDXSoUr
 const tabId = "Sheet1";
 
 const DoctorVerification = () => {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
@@ -50,76 +50,72 @@ const DoctorVerification = () => {
     });
   };
 
-  // Handle form submit to send data to Google Sheets
-    // Handle form submit to send data to Google Sheets
-    const handleSubmit = async (e) => {
-      e.preventDefault();
+  // Handle form submit
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    try {
+      // Create array with form data
+      const rowData = [
+        formData.fullName,
+        formData.medicalLicenseNumber,
+        formData.medicalSpecialty,
+        formData.educationBackground,
+        formData.hospitalWorking,
+        formData.experience,
+        formData.hospitalClinic,
+        formData.complaints,
+        formData.description,
+        new Date().toISOString()
+      ];
+
+      // API request headers
+      const headers = new Headers();
+      headers.append("Content-Type", "application/json");
+
+      // API request options
+      const requestOptions = {
+        method: "POST",
+        headers: headers,
+        redirect: "follow",
+        body: JSON.stringify([rowData]) // Wrap in array as per API requirement
+      };
+
+      console.log('Sending data:', rowData); // Debug log
+
+      // Send data to Google Sheets
+      const response = await fetch(`${API_URL}?tabId=${tabId}`, requestOptions);
+      const result = await response.json(); // Parse response as JSON
       
-      try {
-        // Convert file data to base64 if needed
-        const getBase64 = (file) => {
-          return new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.readAsDataURL(file);
-            reader.onload = () => resolve(reader.result.split(',')[1]);
-            reader.onerror = error => reject(error);
-          });
-        };
-  
-        // Prepare file data
-        const medicalLicenseBase64 = formData.medicalLicense ? await getBase64(formData.medicalLicense) : '';
-        const boardCertificateBase64 = formData.boardCertificate ? await getBase64(formData.boardCertificate) : '';
-        const educationCertificatesBase64 = formData.educationCertificates ? await getBase64(formData.educationCertificates) : '';
-  
-        // Prepare data for Google Sheets
-        const rowData = [
-          [
-            formData.fullName,
-            formData.medicalLicenseNumber,
-            medicalLicenseBase64,
-            formData.medicalSpecialty,
-            boardCertificateBase64,
-            formData.educationBackground,
-            educationCertificatesBase64,
-            formData.hospitalWorking,
-            formData.experience,
-            formData.hospitalClinic,
-            formData.complaints,
-            formData.description,
-            new Date().toISOString() // Timestamp
-          ]
-        ];
-  
-        // API request headers
-        const myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-  
-        // API request options
-        const requestOptions = {
-          method: "POST",
-          headers: myHeaders,
-          redirect: "follow",
-          body: JSON.stringify(rowData)
-        };
-  
-        // Send data to Google Sheets
-        const response = await fetch(`${API_URL}?tabId=${tabId}`, requestOptions);
-        const result = await response.text();
-        
-        if (response.ok) {
-          alert("Verification submitted successfully!");
-          navigate("/demoPage");
-        } else {
-          throw new Error('Failed to submit form');
-        }
-  
-      } catch (error) {
-        console.error('Error:', error);
-        alert("Error submitting verification. Please try again.");
+      console.log('API Response:', result); // Debug log
+
+      if (response.ok) {
+        alert("Form submitted successfully!");
+        // Reset form
+        setFormData({
+          fullName: '',
+          medicalLicenseNumber: '',
+          medicalLicense: null,
+          medicalSpecialty: '',
+          boardCertificate: null,
+          educationBackground: '',
+          educationCertificates: null,
+          hospitalWorking: '',
+          experience: '',
+          hospitalClinic: '',
+          complaints: '',
+          description: '',
+        });
+        navigate("/demoPage");
+      } else {
+        throw new Error(`Failed to submit form: ${result.message || 'Unknown error'}`);
       }
-    };
-  
-     
+
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert("Error submitting form. Please try again.");
+    }
+  };
 
   return (
     <>

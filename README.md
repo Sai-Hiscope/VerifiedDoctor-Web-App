@@ -40,5 +40,5 @@ This project is a React application set up with Vite. Follow the instructions be
 
    The app should now be running at `http://localhost:portNumber` (or a different port specified in the terminal output).
 
-**Doctor Verification Details**: [Open Google Sheet](https://docs.google.com/spreadsheets/d/1KsNAu5BD3r9_gH1uxSwd0HCg4DodSZ2BYptZdeQwfu4/edit?gid=0#gid=0)
+- **Doctor Verification Details**: [Open Google Sheet](https://docs.google.com/spreadsheets/d/1KsNAu5BD3r9_gH1uxSwd0HCg4DodSZ2BYptZdeQwfu4/edit?gid=0#gid=0)
 - **Credential Information**: [Open Google Sheet](https://docs.google.com/spreadsheets/d/1e2Ark_o7BKIDCpREz8tI76zOaq_BkV90WCR-2AQcH9s/edit?gid=583672431#gid=583672431)

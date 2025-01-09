@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import MainHeader from "./header";
 import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
 
-const API_URL = "https://v1.nocodeapi.com/sandeephst/google_sheets/YqqUgyAwUTXXdPEp";
+const API_URL = "https://v1.nocodeapi.com/sandeephst/google_sheets/zUIvNpLDXSoUrMbx";
 const tabId = "Sheet1";
 
 const DoctorVerification = () => {

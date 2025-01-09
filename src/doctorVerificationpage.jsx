@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 import "./doctorVerificationpage.css";
+import FindDoctorPage from "./findDoctorPage";
+import Home from "./Home";
+import Login from "./loginPage";
+import IndividualRegisterPage from "./individualRegisterPage";
+import SosPage from "./sosPage";
+import DoctorRegisterPage from "./doctorRegisterPage";
+import Demo from "./demoPage"
+import { useNavigate } from 'react-router-dom';
 import MainHeader from "./header";
 import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
 
@@ -7,6 +15,8 @@ const API_URL = "https://v1.nocodeapi.com/sandeephst/google_sheets/YqqUgyAwUTXXd
 const tabId = "Sheet1";
 
 const DoctorVerification = () => {
+  const [count, setCount] = useState(0)
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
     medicalLicenseNumber: '',
@@ -43,57 +53,12 @@ const DoctorVerification = () => {
   // Handle form submit to send data to Google Sheets
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    try {
-      // Prepare data in the order of your sheet's columns
-      const data = [
-        formData.fullName,
-        formData.medicalLicenseNumber,
-        formData.medicalLicense?.name || "Uploaded manually", // Placeholder for file
-        formData.medicalSpecialty,
-        formData.boardCertificate?.name || "Uploaded manually", // Placeholder for file
-        formData.educationBackground,
-        formData.educationCertificates?.name || "Uploaded manually", // Placeholder for file
-        formData.hospitalWorking,
-        formData.experience,
-        formData.hospitalClinic,
-        formData.complaints,
-        formData.description,
-      ];
-
-      // Send data to Google Sheets
-      const response = await fetch(`${API_URL}?tabId=${tabId}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify([data]), // NoCodeAPI expects a 2D array
-      });
-
-      if (response.ok) {
-        alert("Form submitted successfully!");
-        // Clear form after submission
-        setFormData({
-          fullName: '',
-          medicalLicenseNumber: '',
-          medicalLicense: null,
-          medicalSpecialty: '',
-          boardCertificate: null,
-          educationBackground: '',
-          educationCertificates: null,
-          hospitalWorking: '',
-          experience: '',
-          hospitalClinic: '',
-          complaints: '',
-          description: '',
-        });
-
-      } else {
-        throw new Error("Failed to submit data");
-      }
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("An error occurred while submitting the form. Please try again.");
-    }
+    // Logic for form submission
+    console.log(formData);
+    alert("VERIFICATION SUBMITTED");
+    navigate("/demoPage");
   };
+     
 
   return (
     <>

@@ -408,8 +408,6 @@ function Homepage() {
             </div>
           </div>
         </div>
-      
-
          {/* Footer */}
     <footer className="home-footer">
 <img

@@ -12,7 +12,7 @@ import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
 import Googlelogo from "./assets/icons/google.png";
 import { useNavigate } from 'react-router-dom';
 
-const API_URL = "https://v1.nocodeapi.com/msk/google_sheets/lXGzPhZBjTOdSNNH";
+const API_URL = "https://v1.nocodeapi.com/sandeephst/google_sheets/YqqUgyAwUTXXdPEp";
 const tabId = "Sheet1";
 
 const Login = () => {
@@ -87,7 +87,8 @@ const Login = () => {
         alert("registration successful");
         setFormData({ username: "", email: "", password: "" });
         setRole("");
-        
+        window.location.href = {DoctorVerification};
+
       }
     } catch (error) {
       console.error("Registration error:", error);

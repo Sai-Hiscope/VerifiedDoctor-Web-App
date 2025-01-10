@@ -11,6 +11,7 @@ import DoctorRegisterPage from "./src/doctorRegisterPage";
 import FounderPage from "./src/ourFoundersPage";
 import HomeDeliveryMedicine from "./src/demoPage";
 import Insurance from "./src/insurancePage";
+import DoctorProfilePage  from "./src/doctorProfilePage";
 
 const router = createBrowserRouter([
   {
@@ -52,6 +53,10 @@ const router = createBrowserRouter([
   {
     path: "/demoPage",
     element: <HomeDeliveryMedicine />,
+  },
+  {
+    path: "/doctorProfilePage",
+    element: <DoctorProfilePage />,
   },
 ]);
 

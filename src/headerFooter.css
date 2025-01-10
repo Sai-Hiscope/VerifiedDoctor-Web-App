@@ -168,40 +168,5 @@
   text-decoration: underline;
 }
 
-/* Media queries */
 
-/* For screens less than 600px */
-@media only screen and (max-width: 600px) {
-  .header-section {
-    font-size: 14px;
-    padding: 8px 1px 50px;
-  }
-  .nav-menu {
-    left: 10px;
-    top: 50px;
-  }
-}
 
-/* For screens less than 768px */
-@media only screen and (max-width: 768px) {
-  .header-section {
-    font-size: 14px;
-    padding: 10px 1px 55px;
-  }
-  .nav-menu {
-    left: 20px;
-    top: 55px;
-  }
-}
-
-/* For screens less than 1024px */
-@media only screen and (max-width: 1024px) {
-  .header-section {
-    font-size: 15px;
-    padding: 12px 1px 60px;
-  }
-  .nav-menu {
-    left: 50px;
-    top: 58px;
-  }
-}

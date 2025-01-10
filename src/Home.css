@@ -657,9 +657,6 @@ option {
    /* color: #ffffff;   */
 }
 
-.store-button:hover {
-  /* background-color: rgb(113, 113, 113); */
-}
 
 .store-button img {
 width: 150px; /* Adjust width as needed */

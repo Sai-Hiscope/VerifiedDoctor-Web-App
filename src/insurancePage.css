@@ -29,7 +29,7 @@
     left: 380px;
     top: 300px;
     height: 750px;
-    background-color: rgba(243, 206, 252, 0.356);
+    background-color: rgba(230, 229, 229, 0.488);
   }
   
   
@@ -98,7 +98,7 @@
     font-weight: 400;
   }
   
-  /* page0 */
+  /* Insurancepage0 */
 
   .insurancefrompage0-div1{
     position: relative;
@@ -219,3 +219,81 @@
   line-height: 1.5;
     
   }
+
+
+  /* InsurancePage3 */
+
+  .insurancefrompage3-div1{
+    position: relative;
+    top: 30px;
+   display: block;
+   justify-content: start;
+   height: 200px;
+  }
+
+  .insurancefrompage3-div1 h2{
+    font-size: xx-large;
+    font-weight: 600;
+    padding-top: 20px;
+    position: relative;
+    left: 0px;
+    text-align: start;
+  }
+  .insurancefrompage3-div1 p{
+    text-align: start;
+  }
+
+  .insurancefrompage3-div2{
+    width: 50%;
+    height: 400px;
+    padding-top: 30px;
+  }
+
+  .insurancefrompage3-div2 ul{
+list-style: none;
+display: block;
+justify-content: space-around;
+  }
+
+  .insurancefrompage3-div2 ul li{
+    padding: 10px;
+  }
+
+  .insurancefrompage3-div2 ul li input{
+    height: 50px;
+    border-radius: 10px;
+  }
+
+  .insurancefrompage3-div2 ul li h4{
+    text-align: start;
+    display: flex;
+    gap: 10px;
+  }
+  .insurancefrompage3-div2 ul li h4 p{
+    color: red;
+    font-size: large;
+  }
+
+  .insurancefrompage3-div2 ul li a{
+    margin-top: 10px;
+    display: flex;
+    justify-content: start;
+  }
+
+  .insurancefrompage3-div3{
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    top: 30%;
+    overflow: hidden;
+    
+   
+  }
+  .insurancefrompage3-div3 img{
+    height: 300px;
+    width: 300px;
+    border: 0.1px solid rgb(209, 208, 208);
+    border-radius: 10px;
+  }
+
+

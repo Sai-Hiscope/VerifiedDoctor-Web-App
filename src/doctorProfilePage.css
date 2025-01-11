@@ -1,5 +1,5 @@
 /* Header */
-.container {
+.container1{
     width: 99%;
     height: 12%;
     background-color: rgb(255, 255, 255);
@@ -126,7 +126,7 @@
   .modal {
     display: block; /* Hidden by default */
     position: fixed;
-    top: 65%;
+    top: 75%;
     left: 56%;
     transform: translate(-50%, -50%); /* Centers the modal */
     background-color: rgb(242, 235, 235);

@@ -140,7 +140,7 @@
   align-self: start;
   display: flex;
   align-items: center;
-  gap: 40px;
+  gap: 80px;
   font-weight: 700;
   flex-wrap: wrap;
 }

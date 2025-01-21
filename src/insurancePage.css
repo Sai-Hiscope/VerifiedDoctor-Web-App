@@ -221,14 +221,82 @@
   }
 
   /* insurance page 1 */
-  .insurancefrompage1-div{
-    border: 1px solid black;
-  }
+
 
   .insurancefrompage1-div1{
-    padding: 10px;
+    padding-top: 10px;
     text-align: start;
   }
+
+  .insurancefrompage1-div2{
+    border: 1px solid rgb(202, 200, 200);
+    width: 45%;
+    text-align: start;
+    border-radius: 10px;
+  }
+  .insurancefrompage1-div2 ul{
+    text-align: start;
+    margin-left: 20px;
+    list-style: none;
+  }
+
+  .insurancefrompage1-div2 ul li{
+    width: 80%;
+  }
+
+  .insurancefrompage1-div2 ul li h4{
+    display: flex;
+    font-weight: 600;
+    font-size: small;
+  }
+
+  .insurancefrompage1-div2 ul li h4 p{
+    margin-left: 10px;
+    color: red;
+  }
+  .insurancefromPage1-ul{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .insurancefrompage1-div3{
+    border: 1px solid rgb(202, 200, 200);
+    width: 45%;
+    text-align: start;
+    border-radius: 10px;
+  }
+
+  .insurancefrompage1-div3 ul li h4{
+    display: flex;
+    font-weight: 600;
+    font-size: small;
+  }
+
+  .insurancefrompage1-div3 ul li{
+    width: 80%;
+  }
+
+
+  .insurancefrompage1-div3 ul{
+    text-align: start;
+    margin-left: 20px;
+    list-style: none;
+  }
+
+  .insurancefrompage1-div3 ul li h4 p{
+    margin-left: 10px;
+    color: red;
+  }
+
+  .insurancefrompage1-div4{
+    margin-top: 20px;
+    height: 179px;
+    overflow: hidden;
+  }
+
+
+
+
 
    /* InsurancePage2 */
 
@@ -340,9 +408,9 @@
   }
 
   .insurancefrompage3-div2 ul{
-list-style: none;
-display: block;
-justify-content: space-around;
+    list-style: none;
+    display: block;
+    justify-content: space-around;
   }
 
   .insurancefrompage3-div2 ul li{

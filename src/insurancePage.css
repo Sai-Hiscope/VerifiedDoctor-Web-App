@@ -69,13 +69,7 @@
     }
   }
   
-  /* logos */
-
-  .svg-logo{
-    height: 18px;
-    padding-right: 8px;
-    margin: 5px;
-  }
+ 
   
     /* Footer */
  
@@ -107,6 +101,14 @@
   }
   
   /* Insurancepage0 */
+   /* logos */
+
+   .svg-logo{
+    height: 18px;
+    padding-right: 8px;
+    margin: 5px;
+    color: #008b2a;
+  }
 
   .insurancefrompage0-div1{
     position: relative;

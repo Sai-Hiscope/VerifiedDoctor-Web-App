@@ -1,6 +1,8 @@
 import React from 'react';
 
-const Pagination = ({ page, setPage }) => {
+const Pagination = ({ page, setPage, handleSubmit }) => {
+  const isLastPage = page === 3; // Adjust this according to the number of pages.
+
   return (
     <div className="pagination">
       <button
@@ -11,11 +13,10 @@ const Pagination = ({ page, setPage }) => {
         Prev
       </button>
       <button
-        onClick={() => setPage((prev) => prev + 1)}
-        disabled={page === 3}
-        className={page === 3 ? 'disabled' : ''}
+        onClick={isLastPage ? handleSubmit : () => setPage((prev) => prev + 1)}
+        className={isLastPage ? 'insurancepage-submit-button' : ''}
       >
-        Next
+        {isLastPage ? 'Submit' : 'Next'}
       </button>
     </div>
   );

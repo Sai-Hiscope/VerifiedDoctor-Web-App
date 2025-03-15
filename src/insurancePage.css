@@ -26,7 +26,7 @@
     box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
     width: 900px;
     position: absolute;
-    left: 380px;
+    left: 18%;
     top: 300px;
     height: 750px;
     background-color: rgba(230, 229, 229, 0.488);
@@ -38,6 +38,7 @@
     justify-content: space-between;
     margin-top: 20px;
   }
+ 
   
   .pagination button {
     padding: 10px 20px;
@@ -69,6 +70,8 @@
     }
   }
   
+ 
+  
     /* Footer */
  
   .insurancePage-footer {
@@ -99,6 +102,14 @@
   }
   
   /* Insurancepage0 */
+   /* logos */
+
+   .svg-logo{
+    height: 18px;
+    padding-right: 8px;
+    margin: 5px;
+    color: #008b2a;
+  }
 
   .insurancefrompage0-div1{
     position: relative;
@@ -128,8 +139,13 @@
     margin-bottom: 5px;
     position: relative;
     top: 5px;
-    width: 150px;
+    width: 190px;
     display: flex;
+  }
+  .Insuranceform-group label p{
+    margin-left: 5px;
+    color: red;
+    font-weight: 900;
   }
   
   span{
@@ -157,8 +173,14 @@
     margin-bottom: 5px;
     position: relative;
     top: 5px;
-    width: 150px;
+    width: 180px;
     display: flex;
+  }
+
+  .Insuranceform-group1 label p{
+    margin-left: 5px;
+    color: red;
+    font-weight: 900;
   }
   
   .Insuranceform-group1 input {
@@ -220,6 +242,164 @@
     
   }
 
+  /* insurance page 1 */
+
+
+  .insurancefrompage1-div1{
+    padding-top: 10px;
+    text-align: start;
+  }
+
+  .insurancefrompage1-div2{
+    border: 1px solid rgb(202, 200, 200);
+    width: 45%;
+    text-align: start;
+    border-radius: 10px;
+  }
+  .insurancefrompage1-div2 ul{
+    text-align: start;
+    margin-left: 20px;
+    list-style: none;
+  }
+
+  .insurancefrompage1-div2 ul li{
+    width: 80%;
+  }
+
+  .insurancefrompage1-div2 ul li h4{
+    display: flex;
+    font-weight: 600;
+    font-size: small;
+  }
+
+  .insurancefrompage1-div2 ul li h4 p{
+    margin-left: 10px;
+    color: red;
+  }
+  .insurancefromPage1-ul{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .insurancefrompage1-div3{
+    border: 1px solid rgb(202, 200, 200);
+    width: 45%;
+    text-align: start;
+    border-radius: 10px;
+  }
+
+  .insurancefrompage1-div3 ul li h4{
+    display: flex;
+    font-weight: 600;
+    font-size: small;
+  }
+
+  .insurancefrompage1-div3 ul li{
+    width: 80%;
+  }
+
+
+  .insurancefrompage1-div3 ul{
+    text-align: start;
+    margin-left: 20px;
+    list-style: none;
+  }
+
+  .insurancefrompage1-div3 ul li h4 p{
+    margin-left: 10px;
+    color: red;
+  }
+
+  .insurancefrompage1-div4{
+    margin-top: 20px;
+    height: 179px;
+    overflow: hidden;
+  }
+
+
+
+
+
+   /* InsurancePage2 */
+
+   .insurancefrompage2-div1{
+    padding: 10px;
+    text-align: start;
+   }
+   .insurancefrompage2-div1 h3{
+    padding-top: 5px;
+   }
+   .insurancefrompage2-div1 p{
+    font-size: small;
+   }
+
+   .insurancefrompage2-div2{
+    background-color: #892be21a;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+   }
+   .insurancefrompage2-div2-h3_1{
+      text-align: start;
+      color: #00008B;
+      padding-left: 40px;
+   }
+
+   .insurancefrompage2-div2-h3_1-ul1{
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    padding-left: 40px;
+    gap: 110px;
+   }
+
+   .insurancefrompage2-div2-h3_2{
+    margin-top: 10px;
+    text-align: start;
+    color: #00008B;
+    padding-left: 40px;
+ }
+ .insurancefrompage2-div2-h3_1-ul2{
+  margin-top: 10px;
+  list-style: none;
+  display: flex;
+  justify-content: start;
+  padding-left: 40px;
+  gap: 130px;
+ }
+
+ .insurancefrompage2-div2-h3_1-ul3{
+  margin-top: 30px;
+  list-style: none;
+  display: flex;
+  justify-content: start;
+  padding-left: 40px;
+  gap: 100px;
+ }
+
+ .insurancefrompage2-div3{
+  margin-top: 10px;
+  background-color: #892be265;
+  border-radius: 10px;
+ }
+
+ .insurancefrompage2-div3-ul1{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+ }
+
+ .insurancefrompage2-div3-ul1 li{
+  border: 2px solid #3300FF;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px;
+  width: 250px;
+  background-color: white;
+  padding: 15px;
+  cursor: pointer;
+ }
+
 
   /* InsurancePage3 */
 
@@ -250,9 +430,9 @@
   }
 
   .insurancefrompage3-div2 ul{
-list-style: none;
-display: block;
-justify-content: space-around;
+    list-style: none;
+    display: block;
+    justify-content: space-around;
   }
 
   .insurancefrompage3-div2 ul li{

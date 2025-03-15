@@ -18,8 +18,9 @@ const HomeDeliveryMedicine = () => {
         <>
         <MainHeader />
 
-        <div className="home-delivery-medicine-container">
-           <h1  className="bounce">COMING SOON....</h1>
+        <div className="home-delivery-medicine-container"  style={{color: "black"}}>
+          
+           <h1  className="bounce" >COMING SOON....</h1>
         </div>
         <div className="home-delivery-medicine-logo">
             <img src={VDrLogo} alt="VDr-logo" />

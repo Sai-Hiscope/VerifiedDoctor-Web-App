@@ -46,35 +46,4 @@
   }
 
 
-  /* FOOTER PART */
-
-.demo-footer{
-    position: absolute;
-    height: 280px;
-    width: 100%;
-    overflow: hidden;
-    top: 600px;
-    left: 0%;
-  }
-  
-  
-  
-  
-  .demo-footer-logo {
-    width: 100px;
-    border-radius: 185px;
-    position: absolute;
-    left: 45%;
-    top: 130px;
-    height: 100px;
-    /* z-index: 1; */
-  }
-  .demo-footer-copyright h6{
-    top: 178px;
-    position: absolute;
-    left: 51.7%;
-    z-index: 1;
-    background-color: none; 
-    font-weight: 400;
-  }
-  
+ 

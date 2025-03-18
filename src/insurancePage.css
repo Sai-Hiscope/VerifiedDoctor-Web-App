@@ -70,36 +70,6 @@
     }
   }
   
- 
-  
-    /* Footer */
- 
-  .insurancePage-footer {
-    position: absolute;
-    height: 280px;
-    width: 100%;
-    overflow: hidden;
-    top: 1100px;
-    left: 0%;
-  }
-  
-  .insurancePage-footer-logo {
-    width: 100px;
-    border-radius: 185px;
-    position: absolute;
-    left: 45%;
-    top: 130px;
-    height: 100px;
-  }
-  
-  .insurancePage-footer-copyright h6 {
-    top: 178px;
-    position: absolute;
-    left: 51.7%;
-    z-index: 1;
-    background-color: none;
-    font-weight: 400;
-  }
   
   /* Insurancepage0 */
    /* logos */

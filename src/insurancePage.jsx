@@ -11,6 +11,7 @@ import Pagination from "./components/Pagination";
 import MainHeader from "./header";
 import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
 import Googlelogo from "./assets/icons/google.png";
+import Fotter from "./components/fotter";
 
 
 
@@ -39,28 +40,12 @@ const Insurance = ()=>{
             {renderPage()}
             <Pagination page={page} setPage={setPage} />
         
-          </div>
-           {/* Footer */}
-          <footer className="insurancePage-footer">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/8c7c2f1f7f0ad4e4188183ac4b58840bac63df589165099f22e5a8c9c8da274d?placeholderIfAbsent=true&apiKey=9ccc22c2724c427c8498a732bb366bf4"
-            alt=""
-            className="insurancePage-background-image-footer"/>
-          
-            <div className="insurancePage-footer-div1">
-            <img
-                    src={VDrLogo}
-                    alt="VDrapp Footer Logo"
-                    className="insurancePage-footer-logo"
-                  />
-           </div>
-           <div className="insurancePage-footer-copyright"><h6> @Hiscope 2024 </h6></div>
-          </footer>
-          </div>
-          <>
-          
             
-          </>
+          </div>
+        </div>
+
+        <Fotter value="1200px"/>
+            
           </>
     )
 }

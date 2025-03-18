@@ -679,35 +679,6 @@ border-radius: 4px; /* Match border radius with the background block */
 }
 
 
-/* FOOTER PART */
-
-.home-footer{
-  /*  */
-  position: absolute;
-  height: 280px;
-  width: 100%;
-  overflow: hidden;
-  top: 1400px;
-  left: 0%;
-}
-
-.home-footer-logo {
-  width: 100px;
-  border-radius: 185px;
-  position: absolute;
-  left: 45%;
-  top: 130px;
-  height: 100px;
-  /* z-index: 1; */
-}
-.home-footer-copyright h6{
-  top: 178px;
-  position: absolute;
-  left: 51.7%;
-  z-index: 1;
-  background-color: none; 
-  font-weight: 400;
-}
 
 /* Styles for Google Play and App Store images */
 .store-images {

@@ -7,12 +7,13 @@
     justify-items: center;
     height: 300px; 
     width: 100%; 
-    border: 1px solid black;
+    border: 1px solid rgba(211, 210, 210, 0.349);
     border-radius: 8px;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    padding-left: 70px;
 }
 
 

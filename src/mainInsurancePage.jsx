@@ -110,7 +110,7 @@ const MainInsurance = ()=>{
      
 <div>
       {/* footer */}
-      <Fotter value="1300px"/>
+      <Fotter value="1100px"/>
       </div>
       </div>
       </>

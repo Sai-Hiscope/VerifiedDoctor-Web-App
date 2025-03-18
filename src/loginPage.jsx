@@ -1,26 +1,17 @@
 import { useState } from 'react';
 import "./loginPage.css";
-import DoctorVerification from "./doctorVerificationpage";
-import FindDoctorPage from "./findDoctorPage";
-import Home from "./Home";
-import IndividualRegisterPage from "./individualRegisterPage";
-import SosPage from "./sosPage";
-import DoctorRegisterPage from "./doctorRegisterPage";
-import FounderPage from "./ourFoundersPage";
+import { useNavigate } from 'react-router-dom';
 import MainHeader from './header';
 import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
 import Googlelogo from "./assets/icons/google.png";
-import { useNavigate } from 'react-router-dom';
 
-const API_URL = "https://v1.nocodeapi.com/sandeephst/google_sheets/YqqUgyAwUTXXdPEp";
-const tabId = "Sheet1";
+const LOGIN_API_URL = "http://localhost:8080/api/auth/login";
+const REGISTER_API_URL = "http://localhost:8080/api/auth/register";
 
 const Login = () => {
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("login");
   const [role, setRole] = useState("");
-
-
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -36,23 +27,26 @@ const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      const searchUrl = `${API_URL}/search?tabId=${tabId}&searchKey=email&searchValue=${encodeURIComponent(formData.email)}`;
-      const response = await fetch(searchUrl);
-      const result = await response.json();
 
-      if (result && result.length > 0) {
-        const user = result[0];
-        if (user.email.trim() === formData.email && user.password.trim() === formData.password) {
-          // alert("Login successful!");
-          setFormData({ username: "", email: "", password: "" });
-          window.alert(`WELCOME LOGIN SUCCESFULLY! FINISH THE VERIFICATION FORM`);
+    const loginData = {
+      email: formData.email,
+      password: formData.password
+    };
+
+    try {
+      const response = await fetch(LOGIN_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(loginData)
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        alert(`WELCOME LOGIN SUCCESSFUL! FINISH THE VERIFICATION FORM`);
         navigate("/doctorVerificationpage");
-        } else {
-          alert("Invalid email or password.");
-        }
       } else {
-        alert("User not found.");
+        const errorMessage = await response.text();
+        alert(`Login failed: ${errorMessage}`);
       }
     } catch (error) {
       console.error("Login error:", error);
@@ -62,34 +56,35 @@ const Login = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+
     if (!formData.username || !formData.email || !formData.password) {
       alert("All fields are required");
       return;
     }
 
+    const registerData = {
+      role: role,
+      username: formData.username,
+      email: formData.email,
+      password: formData.password
+    };
+
     try {
-      const searchUrl = `${API_URL}/search?tabId=${tabId}&searchKey=email&searchValue=${encodeURIComponent(formData.email)}`;
-      const searchResponse = await fetch(searchUrl);
-      const searchResult = await searchResponse.json();
-
-      if (searchResult.length > 0) {
-        alert("User already exists!");
-        return;
-      }
-
-      const response = await fetch(`${API_URL}?tabId=${tabId}`, {
+      const response = await fetch(REGISTER_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify([[role, formData.username, formData.email, formData.password]])
+        body: JSON.stringify(registerData)
       });
 
       if (response.ok) {
-        alert("registration successful");
+        alert("Registration successful!");
         setFormData({ username: "", email: "", password: "" });
         setRole("");
 
-        window.location.href = "./doctorVerificationpage"
-
+        navigate("/doctorVerificationpage");
+      } else {
+        const errorMessage = await response.text();
+        alert(`Registration failed: ${errorMessage}`);
       }
     } catch (error) {
       console.error("Registration error:", error);
@@ -100,7 +95,6 @@ const Login = () => {
   const showLogin = () => {
     setActiveTab("login");
     setRole("");
-
   };
 
   const showRegister = () => {
@@ -112,15 +106,12 @@ const Login = () => {
   const showUserForm = () => setRole("user");
   const goBack = () => setRole("");
 
-
-
-
   return (
     <>
       <MainHeader />
       <div className='login-change'>
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/b07d1dfbb02eae67caa3e2cfdf5c9867238ca7e72eb515ca4ba7a5fa71896a65?placeholderIfAbsent=true&apiKey=9ccc22c2724c427c8498a732bb366bf4"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/b07d1dfbb02eae67caa3e2cfdf5c9867238ca7e72eb515ca4ba7a5fa71896a65"
           alt="Healthcare illustration"
           className="hero-image"
         />
@@ -133,10 +124,7 @@ const Login = () => {
           <button className={`tab-btn ${activeTab === "register" ? "active" : ""}`} onClick={showRegister}>
             Register
           </button>
-   
-      {/* User Registration Form */}
-      </div>
-
+        </div>
 
         {activeTab === "login" && (
           <div className="form-container">
@@ -169,10 +157,10 @@ const Login = () => {
         {activeTab === "register" && !role && (
           <div className="form-container">
             <h2>Register</h2>
-            <button className="role-btn" onClick={showDoctorForm}>Are you a Doctor?</button>
+            <button className="role-btn" onClick={showDoctorForm}>Are you a HealthCare Profession?</button>
             <button className="role-btn" onClick={showUserForm}>User</button>
-            <div className='title1'><li>If you are a doctor click on the "Are you a Doctor" button</li></div>
-            <div className='title2'><li>If you are a user click on the "user" button</li></div>
+            <div className='title1'><li>If you are a doctor, click on "Are you a Doctor" button</li></div>
+            <div className='title2'><li>If you are a user, click on the "User" button</li></div>
             <div className='title3'><li>Register in our VDR app and get ultra benefits and discounts.</li></div>
           </div>
         )}
@@ -214,7 +202,7 @@ const Login = () => {
 
       <footer className="login-footer">
         <img
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8c7c2f1f7f0ad4e4188183ac4b58840bac63df589165099f22e5a8c9c8da274d?placeholderIfAbsent=true&apiKey=9ccc22c2724c427c8498a732bb366bf4"
+          src="https://cdn.builder.io/api/v1/image/assets/TEMP/8c7c2f1f7f0ad4e4188183ac4b58840bac63df589165099f22e5a8c9c8da274d"
           alt="bg"
           className="sos-background-image-footer"
         />

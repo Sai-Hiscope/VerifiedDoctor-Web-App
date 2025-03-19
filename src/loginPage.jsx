@@ -5,7 +5,7 @@ import MainHeader from './header';
 import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
 import Googlelogo from "./assets/icons/google.png";
 
-import { useNavigate } from 'react-router-dom';
+
 import Fotter from "./components/fotter";
 
 const LOGIN_API_URL = "http://localhost:8080/api/auth/login";

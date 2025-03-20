@@ -9,7 +9,7 @@ import Login from "./loginPage";
 import SosPage from "./sosPage";
 import DoctorRegisterPage from "./doctorRegisterPage";
 import FounderPage from "./ourFoundersPage";
-import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
+import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
 
 
 const IndividualRegisterPage = () => {

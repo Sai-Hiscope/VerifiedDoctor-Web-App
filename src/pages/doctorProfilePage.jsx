@@ -1,15 +1,11 @@
 import React, { useState } from "react";
 import "./doctorProfilePage.css";
-import HeaderFooter from "./header";
+import HeaderFooter from "../components/header";
 
-//images import 
-import Appointments from "./assets/Images/doctorprofilepage/appoitment1.png";
-import patientrecord  from "./assets/Images/doctorprofilepage/patientrecord.png";
-import doctor from "./assets/Images/doctorprofilepage/doctor.png";
-
-
-
-
+//images import
+import Appointments from "../assets/Images/doctorprofilepage/appoitment1.png";
+import patientrecord from "../assets/Images/doctorprofilepage/patientrecord.png";
+import doctor from "../assets/Images/doctorprofilepage/doctor.png";
 
 const DoctorProfilePage = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -23,7 +19,6 @@ const DoctorProfilePage = () => {
     setSidebarOpen(false);
   };
   const openAppointments = () => {
-   
     setAppointmentsModalOpen(true);
   };
   const closeAppointments = () => {
@@ -31,7 +26,6 @@ const DoctorProfilePage = () => {
   };
   const openPatientRecord = () => {
     setPatientRecordModalOpen(true);
-    
   };
   const closePatientRecord = () => {
     setPatientRecordModalOpen(false);
@@ -42,13 +36,19 @@ const DoctorProfilePage = () => {
 
   return (
     <div>
-     <HeaderFooter />
+      <HeaderFooter />
 
       {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`} id="mySidebar">
-        <a href="javascript:void(0)" onClick={closeNav}>× Close</a>
-        <a href="#" onClick={openAppointments}>Appointments</a>
-        <a href="#" onClick={openPatientRecord}>Patient record </a>
+        <a href="javascript:void(0)" onClick={closeNav}>
+          × Close
+        </a>
+        <a href="#" onClick={openAppointments}>
+          Appointments
+        </a>
+        <a href="#" onClick={openPatientRecord}>
+          Patient record{" "}
+        </a>
         <a href="#">Earnings</a>
         <a href="#">Calender</a>
         <a href="#">Reports</a>
@@ -57,9 +57,14 @@ const DoctorProfilePage = () => {
 
       {/* Main Content */}
       <div className="appoitment-container1">
-        <p className="text">Welcome Doctor saikrishna <span style={{ color: "red" }}></span></p>
-        <p className="text1">Whatever you do, do with determination. You have one life to live, do your work with passion and give your best.</p>
-        <img className="image-container1" src={doctor} alt="doctor"/>
+        <p className="text">
+          Welcome Doctor saikrishna <span style={{ color: "red" }}></span>
+        </p>
+        <p className="text1">
+          Whatever you do, do with determination. You have one life to live, do
+          your work with passion and give your best.
+        </p>
+        <img className="image-container1" src={doctor} alt="doctor" />
       </div>
 
       <div className="appoitment-container2">
@@ -109,7 +114,9 @@ const DoctorProfilePage = () => {
               <input type="checkbox" />
             </li>
           </div>
-          <button className="modal-close" onClick={closeAppointments}>Close</button>
+          <button className="modal-close" onClick={closeAppointments}>
+            Close
+          </button>
         </div>
       )}
 
@@ -136,12 +143,16 @@ const DoctorProfilePage = () => {
               <button onClick={navigateToAnotherPage}>Reports</button>
             </li>
           </div>
-          <button className="modal-close" onClick={closePatientRecord}>Close</button>
+          <button className="modal-close" onClick={closePatientRecord}>
+            Close
+          </button>
         </div>
       )}
 
       {/* Button to open sidebar */}
-      <button className="open-btn" onClick={openNav}>☰</button>
+      <button className="open-btn" onClick={openNav}>
+        ☰
+      </button>
     </div>
   );
 };

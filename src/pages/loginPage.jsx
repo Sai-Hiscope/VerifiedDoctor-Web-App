@@ -1,12 +1,10 @@
-import { useState } from 'react';
+import { useState } from "react";
 import "./loginPage.css";
-import { useNavigate } from 'react-router-dom';
-import MainHeader from './header';
-import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
-import Googlelogo from "./assets/icons/google.png";
-
-import { useNavigate } from 'react-router-dom';
-import Fotter from "./components/fotter";
+import { useNavigate } from "react-router-dom";
+import MainHeader from "../components/header";
+import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
+import Googlelogo from "../assets/icons/google.png";
+import Fotter from "../components/fotter";
 
 const LOGIN_API_URL = "http://localhost:8080/api/auth/login";
 const REGISTER_API_URL = "http://localhost:8080/api/auth/register";
@@ -18,13 +16,13 @@ const Login = () => {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
-    password: ""
+    password: "",
   });
 
   const handleInputChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -33,14 +31,14 @@ const Login = () => {
 
     const loginData = {
       email: formData.email,
-      password: formData.password
+      password: formData.password,
     };
 
     try {
       const response = await fetch(LOGIN_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(loginData)
+        body: JSON.stringify(loginData),
       });
 
       if (response.ok) {
@@ -69,14 +67,14 @@ const Login = () => {
       role: role,
       username: formData.username,
       email: formData.email,
-      password: formData.password
+      password: formData.password,
     };
 
     try {
       const response = await fetch(REGISTER_API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(registerData)
+        body: JSON.stringify(registerData),
       });
 
       if (response.ok) {
@@ -112,7 +110,7 @@ const Login = () => {
   return (
     <>
       <MainHeader />
-      <div className='login-change'>
+      <div className="login-change">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/b07d1dfbb02eae67caa3e2cfdf5c9867238ca7e72eb515ca4ba7a5fa71896a65"
           alt="Healthcare illustration"
@@ -121,10 +119,16 @@ const Login = () => {
       </div>
       <div className="container">
         <div className="tabs">
-          <button className={`tab-btn ${activeTab === "login" ? "active" : ""}`} onClick={showLogin}>
+          <button
+            className={`tab-btn ${activeTab === "login" ? "active" : ""}`}
+            onClick={showLogin}
+          >
             Login
           </button>
-          <button className={`tab-btn ${activeTab === "register" ? "active" : ""}`} onClick={showRegister}>
+          <button
+            className={`tab-btn ${activeTab === "register" ? "active" : ""}`}
+            onClick={showRegister}
+          >
             Register
           </button>
         </div>
@@ -150,8 +154,8 @@ const Login = () => {
                 required
               />
               <button type="submit">Login</button>
-              <div className='forget'>Forget password ?</div>
-              <div className='login-h1'>----continue with----</div>
+              <div className="forget">Forget password ?</div>
+              <div className="login-h1">----continue with----</div>
               <img src={Googlelogo} alt="google" className="small-image" />
             </form>
           </div>
@@ -160,11 +164,23 @@ const Login = () => {
         {activeTab === "register" && !role && (
           <div className="form-container">
             <h2>Register</h2>
-            <button className="role-btn" onClick={showDoctorForm}>Are you a HealthCare Profession?</button>
-            <button className="role-btn" onClick={showUserForm}>User</button>
-            <div className='title1'><li>If you are a doctor, click on "Are you a Doctor" button</li></div>
-            <div className='title2'><li>If you are a user, click on the "User" button</li></div>
-            <div className='title3'><li>Register in our VDR app and get ultra benefits and discounts.</li></div>
+            <button className="role-btn" onClick={showDoctorForm}>
+              Are you a HealthCare Profession?
+            </button>
+            <button className="role-btn" onClick={showUserForm}>
+              User
+            </button>
+            <div className="title1">
+              <li>If you are a doctor, click on "Are you a Doctor" button</li>
+            </div>
+            <div className="title2">
+              <li>If you are a user, click on the "User" button</li>
+            </div>
+            <div className="title3">
+              <li>
+                Register in our VDR app and get ultra benefits and discounts.
+              </li>
+            </div>
           </div>
         )}
 
@@ -198,11 +214,12 @@ const Login = () => {
               />
               <button type="submit">Register</button>
             </form>
-            <button className="role-btn" onClick={goBack}>Back</button>
+            <button className="role-btn" onClick={goBack}>
+              Back
+            </button>
           </div>
         )}
       </div>
-
 
       <Fotter value="800px" />
     </>

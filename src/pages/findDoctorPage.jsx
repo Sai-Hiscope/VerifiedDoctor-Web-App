@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./findDoctorPage.css";
-import HeaderFooter from "./header";
+import HeaderFooter from "../components/header";
 
 import DoctorVerification from "./doctorVerificationpage";
 import Home from "./Home";
@@ -9,13 +9,11 @@ import IndividualRegisterPage from "./individualRegisterPage";
 import SosPage from "./sosPage";
 import DoctorRegisterPage from "./doctorRegisterPage";
 import FounderPage from "./ourFoundersPage";
-import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
-import Fotter from "./components/fotter";
+import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
+import Fotter from "../components/fotter";
 
-
-
-import indianStates from "./indianStates";
-import doctorSelect from "./doctorSelect";
+import indianStates from "../indianStates";
+import doctorSelect from "../doctorSelect";
 
 const FindDoctorPage = () => {
   const [selectedState, setSelectedState] = useState("");
@@ -27,7 +25,6 @@ const FindDoctorPage = () => {
     setPrint(`welcome ${selectedState} ${selectDoctor}`);
   };
 
-  
   return (
     <>
       <HeaderFooter />
@@ -50,7 +47,9 @@ const FindDoctorPage = () => {
                 value={selectedState}
                 onChange={(e) => setSelectedState(e.target.value)}
               >
-                <option value="" className="findDoctor-location-option">Select State</option>
+                <option value="" className="findDoctor-location-option">
+                  Select State
+                </option>
                 {indianStates.map((state) => (
                   <option key={state} value={state}>
                     {state}
@@ -76,7 +75,9 @@ const FindDoctorPage = () => {
                 value={selectDoctor}
                 onChange={(e) => setSelectDoctor(e.target.value)}
               >
-                <option value="" className="findDoctor-search-option">Select Doctor</option>
+                <option value="" className="findDoctor-search-option">
+                  Select Doctor
+                </option>
                 {doctorSelect.map((doctor) => (
                   <option key={doctor} value={doctor}>
                     {doctor}
@@ -85,12 +86,14 @@ const FindDoctorPage = () => {
               </select>
             </div>
           </div>
-          <button type="submit" className="findDoctor-submit">Submit</button>
+          <button type="submit" className="findDoctor-submit">
+            Submit
+          </button>
         </form>
         {print && <h1 className="findDoctor-print">{print}</h1>}
       </div>
-     
-      <Fotter value="700px"/>
+
+      <Fotter value="700px" />
     </>
   );
 };

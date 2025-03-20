@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "./doctorRegisterPage.css";
-import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
+import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
 
 const DoctorRegisterPage = () => {
   const navigate = useNavigate();

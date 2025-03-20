@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./sosPage.css";
-import Header from "./header";
+import Header from "../components/header";
 
 import DoctorVerification from "./doctorVerificationpage";
 import FindDoctorPage from "./findDoctorPage";
@@ -9,9 +9,8 @@ import Login from "./loginPage";
 import IndividualRegisterPage from "./individualRegisterPage";
 import DoctorRegisterPage from "./doctorRegisterPage";
 import FounderPage from "./ourFoundersPage";
-import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
-import Fotter from "./components/fotter";
-
+import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
+import Fotter from "../components/fotter";
 
 const SosPage = () => {
   const [count, setCount] = useState("Double click");
@@ -56,31 +55,28 @@ const SosPage = () => {
 
   return (
     <>
-    <Header/>
+      <Header />
 
       {/* SOS part */}
       <div className="sos-container">
-      <div className="div1">
-        <button className="div1_btn" onDoubleClick={handleDoubleClick}>
-          {count}
-        </button>
-      </div>
-      <h2 className="div1-h2">SOS EMERGENCY</h2>
-      {(sosActive || countdownStarted) && (
-        <>
-          <button className="stop_btn" onClick={stopSos}>
-            X
+        <div className="div1">
+          <button className="div1_btn" onDoubleClick={handleDoubleClick}>
+            {count}
           </button>
-     
-        </>
-     
-      )}
-    </div>
-
-
-    {/* Footer */}
-    <Fotter value="700px"/>
+        </div>
+        <h2 className="div1-h2">SOS EMERGENCY</h2>
+        {(sosActive || countdownStarted) && (
+          <>
+            <button className="stop_btn" onClick={stopSos}>
+              X
+            </button>
           </>
+        )}
+      </div>
+
+      {/* Footer */}
+      <Fotter value="700px" />
+    </>
   );
 };
 

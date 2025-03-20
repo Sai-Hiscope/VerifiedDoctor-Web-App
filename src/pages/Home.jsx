@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./Home.css"
+import "./Home.css";
 
-import MAinHeader from "./header";
+import MAinHeader from "../components/header";
 
 import DoctorVerification from "./doctorVerificationpage";
 import FindDoctorPage from "./findDoctorPage";
@@ -11,27 +11,25 @@ import IndividualRegisterPage from "./individualRegisterPage";
 import DoctorRegisterPage from "./doctorRegisterPage";
 import FounderPage from "./ourFoundersPage";
 import HomeDeliveryMedicine from "./demoPage";
-import Fotter from "./components/fotter";
+import Fotter from "../components/fotter";
 // image imports
 
-import VDrLogo from "./assets/Images/commonImg/VDrlogo.png";
-import GooglePlayLogo from "./assets/icons/apps/googleplay.png";
-import AppStoreLogo from "./assets/icons/apps/applestore.png";
+import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
+import GooglePlayLogo from "../assets/icons/apps/googleplay.png";
+import AppStoreLogo from "../assets/icons/apps/applestore.png";
 
-import CardiologistImg from "./assets/Images/commonImg/Cardiologist.png";
-import GynaecologistImg from "./assets/Images/homeImg/gynaecologist.png";
-import DentistImg from "./assets/Images/homeImg/Dentist.png";
-import GastroenterologistImg from "./assets/Images/homeImg/Gastrologist.png";
-import OrthopedistImg from "./assets/Images/homeImg/Orthopedist.png";
-import DiagnosticsImg from "./assets/Images/homeImg/Diagnostics.png";
-import DermatologistImg from "./assets/Images/homeImg/Dermatologist.png";
-import GeneralPhysicianImg from "./assets/Images/homeImg/general physicians.png";
-import NeurologistImg from "./assets/Images/homeImg/Neurologist.png";
-import PhysiotherapistImg from "./assets/Images/homeImg/physiotherapist.png";
-import PediatricianImg from "./assets/Images/homeImg/Pediatrician.png";
-import PulmonologistImg from "./assets/Images/homeImg/pulmonologist.png";
-
-
+import CardiologistImg from "../assets/Images/commonImg/Cardiologist.png";
+import GynaecologistImg from "../assets/Images/homeImg/gynaecologist.png";
+import DentistImg from "../assets/Images/homeImg/Dentist.png";
+import GastroenterologistImg from "../assets/Images/homeImg/Gastrologist.png";
+import OrthopedistImg from "../assets/Images/homeImg/Orthopedist.png";
+import DiagnosticsImg from "../assets/Images/homeImg/Diagnostics.png";
+import DermatologistImg from "../assets/Images/homeImg/Dermatologist.png";
+import GeneralPhysicianImg from "../assets/Images/homeImg/general physicians.png";
+import NeurologistImg from "../assets/Images/homeImg/Neurologist.png";
+import PhysiotherapistImg from "../assets/Images/homeImg/physiotherapist.png";
+import PediatricianImg from "../assets/Images/homeImg/Pediatrician.png";
+import PulmonologistImg from "../assets/Images/homeImg/pulmonologist.png";
 
 function Homepage() {
   console.log("Contact Page Rendered");
@@ -41,60 +39,112 @@ function Homepage() {
     // Add your redirection logic here
   };
 
-   // Define state for country, state, and search input
-   const [country, setCountry] = useState('');
-   const [selectedState, setSelectedState] = useState('');
-   const [searchQuery, setSearchQuery] = useState('');
-   const [filteredDoctors, setFilteredDoctors] = useState([]);
- 
-   // States for India and USA
-   const states = {
-     india: [
-       "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa", "Gujarat", "Haryana",
-       "Himachal Pradesh", "Jharkhand", "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
-       "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu",
-       "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal"
-     ],
-     usa: [
-       "California", "Texas", "Florida", "New York", "Illinois", "Pennsylvania", "Ohio", "Georgia", "North Carolina",
-       "Michigan", "New Jersey", "Virginia", "Washington", "Arizona", "Massachusetts", "Tennessee",
-       "Indiana", "Missouri", "Maryland", "Wisconsin"
-     ]
-   };
- 
-   // List of doctor types
-   const doctorTypes = [
-     "Dentist", "Cardiologist", "Dermatologist", "Pediatrician", "Orthopedic", "General Physician", 
-     "ENT Specialist", "Gynecologist", "Urologist", "Neurologist", "Psychiatrist", "Oncologist", "Gastroenterologist"
-   ];
- 
-   // Update state dropdown based on selected country
-   const updateStates = (e) => {
-     setCountry(e.target.value);
-     setSelectedState('');
-   };
- 
-   // Filter doctor types based on search query
-   const handleSearchChange = (e) => {
-     const query = e.target.value;
-     setSearchQuery(query);
- 
-     // Filter doctor types based on query
-     if (query) {
-       const filtered = doctorTypes.filter(doctor =>
-         doctor.toLowerCase().includes(query.toLowerCase())
-       );
-       setFilteredDoctors(filtered);
-     } else {
-       setFilteredDoctors([]);
-     }
-   };
- 
-   // Select doctor type from suggestions
-   const selectDoctorType = (doctor) => {
-     setSearchQuery(doctor);
-     setFilteredDoctors([]); // Hide suggestions after selection
-   };
+  // Define state for country, state, and search input
+  const [country, setCountry] = useState("");
+  const [selectedState, setSelectedState] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [filteredDoctors, setFilteredDoctors] = useState([]);
+
+  // States for India and USA
+  const states = {
+    india: [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttar Pradesh",
+      "Uttarakhand",
+      "West Bengal",
+    ],
+    usa: [
+      "California",
+      "Texas",
+      "Florida",
+      "New York",
+      "Illinois",
+      "Pennsylvania",
+      "Ohio",
+      "Georgia",
+      "North Carolina",
+      "Michigan",
+      "New Jersey",
+      "Virginia",
+      "Washington",
+      "Arizona",
+      "Massachusetts",
+      "Tennessee",
+      "Indiana",
+      "Missouri",
+      "Maryland",
+      "Wisconsin",
+    ],
+  };
+
+  // List of doctor types
+  const doctorTypes = [
+    "Dentist",
+    "Cardiologist",
+    "Dermatologist",
+    "Pediatrician",
+    "Orthopedic",
+    "General Physician",
+    "ENT Specialist",
+    "Gynecologist",
+    "Urologist",
+    "Neurologist",
+    "Psychiatrist",
+    "Oncologist",
+    "Gastroenterologist",
+  ];
+
+  // Update state dropdown based on selected country
+  const updateStates = (e) => {
+    setCountry(e.target.value);
+    setSelectedState("");
+  };
+
+  // Filter doctor types based on search query
+  const handleSearchChange = (e) => {
+    const query = e.target.value;
+    setSearchQuery(query);
+
+    // Filter doctor types based on query
+    if (query) {
+      const filtered = doctorTypes.filter((doctor) =>
+        doctor.toLowerCase().includes(query.toLowerCase())
+      );
+      setFilteredDoctors(filtered);
+    } else {
+      setFilteredDoctors([]);
+    }
+  };
+
+  // Select doctor type from suggestions
+  const selectDoctorType = (doctor) => {
+    setSearchQuery(doctor);
+    setFilteredDoctors([]); // Hide suggestions after selection
+  };
   const slidesData = [
     {
       title: "Cardiologist",
@@ -219,16 +269,14 @@ function Homepage() {
 
   return (
     <>
-    <MAinHeader/>
+      <MAinHeader />
       <>
-
-              {/* Login/Signup Button (Right Side)
+        {/* Login/Signup Button (Right Side)
               <div className="auth-buttons">
                 <button className="login-btn" onClick={handleButtonClick}>
                   Login/Sign Up
                 </button>
               </div> */}
-        
       </>
 
       {/* padding part */}
@@ -243,7 +291,7 @@ function Homepage() {
       {/* Dropdown Part */}
 
       <>
-                <div >
+        <div>
           {/* Dropdown for country and state */}
           <div className="dropdown-container">
             <div className="input-container">
@@ -290,9 +338,6 @@ function Homepage() {
               </div>
             )}
           </div>
-  
-
-          
         </div>
       </>
 
@@ -300,53 +345,50 @@ function Homepage() {
 
       <>
         <div className="experts-moving-cont">
-
-        {/* Heading */}
+          {/* Heading */}
           <div className="homediv-h1">
             <h1>
               Get Expert Medical Care Online or In-Clinic for Any Health Need
             </h1>
           </div>
-        <div className="slider">
-          <div className="slides-container">
-            <div
-              className="slides"
-              style={{
-                transform: `translateX(-${
-                  currentIndex * (100 / slidesToShow)
-                }%)`,
-                gridTemplateColumns: `repeat(${slidesData.length}, 1fr)`,
-              }}
-            >
-              {slidesData.map((slide, index) => (
-                <div className="slide" key={index}>
-                  <div className="text-above">{slide.title}</div>
-                  <img src={slide.img} alt={slide.title} />
-                  <div className="text-below">{slide.description}</div>
-                  <div className="buttons">
-                    <button className="blue-button">Online</button>
-                    <button className="pink-button">Clinic</button>
+          <div className="slider">
+            <div className="slides-container">
+              <div
+                className="slides"
+                style={{
+                  transform: `translateX(-${
+                    currentIndex * (100 / slidesToShow)
+                  }%)`,
+                  gridTemplateColumns: `repeat(${slidesData.length}, 1fr)`,
+                }}
+              >
+                {slidesData.map((slide, index) => (
+                  <div className="slide" key={index}>
+                    <div className="text-above">{slide.title}</div>
+                    <img src={slide.img} alt={slide.title} />
+                    <div className="text-below">{slide.description}</div>
+                    <div className="buttons">
+                      <button className="blue-button">Online</button>
+                      <button className="pink-button">Clinic</button>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
+            </div>
+            <div className="nav-buttons">
+              <button onClick={prevSlide} disabled={currentIndex === 0}>
+                &#10094;
+              </button>
+              <button
+                onClick={nextSlide}
+                disabled={currentIndex === slidesData.length - slidesToShow}
+              >
+                &#10095;
+              </button>
             </div>
           </div>
-          <div className="nav-buttons">
-            <button onClick={prevSlide} disabled={currentIndex === 0}>
-              &#10094;
-            </button>
-            <button
-              onClick={nextSlide}
-              disabled={currentIndex === slidesData.length - slidesToShow}
-            >
-              &#10095;
-            </button>
-          </div>
-        </div>
         </div>
       </>
-
-      
 
       {/* doctoropinion */}
       <>
@@ -381,7 +423,7 @@ function Homepage() {
             <div className="preview">
               <img
                 src={VDrLogo}
-               height="400px"
+                height="400px"
                 width="900px"
                 alt="App Preview"
               />
@@ -394,23 +436,18 @@ function Homepage() {
               </p>
               <div className="store-buttons">
                 <div className="store-button">
-                  <img
-                    src={GooglePlayLogo}
-                     alt="Google Play Store"
-                  />
+                  <img src={GooglePlayLogo} alt="Google Play Store" />
                 </div>
                 <div className="store-button">
-                  <img src={AppStoreLogo}  
-                     alt="Apple app Store"
-                  />
+                  <img src={AppStoreLogo} alt="Apple app Store" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-         {/* Footer */}
-   
-         <Fotter value="1500px"/>
+        {/* Footer */}
+
+        <Fotter value="1500px" />
       </>
     </>
   );

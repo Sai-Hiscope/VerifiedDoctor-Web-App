@@ -1,18 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, createBrowserRouter, RouterProvider } from "react-router-dom";
-import Homepage from "./src/Home";
-import DoctorVerification from "./src/doctorVerificationpage";
-import FindDoctorPage from "./src/findDoctorPage";
-import Login from "./src/loginPage";
-import IndividualRegisterPage from "./src/individualRegisterPage";
-import SosPage from "./src/sosPage";
-import DoctorRegisterPage from "./src/doctorRegisterPage";
-import FounderPage from "./src/ourFoundersPage";
-import HomeDeliveryMedicine from "./src/demoPage";
-import Insurance from "./src/insurancePage";
-import DoctorProfilePage  from "./src/doctorProfilePage";
-import MainInsurance from "./src/mainInsurancePage";
+import Homepage from "./src/pages/Home";
+import DoctorVerification from "./src/pages/doctorVerificationpage";
+import FindDoctorPage from "./src/pages/findDoctorPage";
+import Login from "./src/pages/loginPage";
+import IndividualRegisterPage from "./src/pages/individualRegisterPage";
+import SosPage from "./src/pages/sosPage";
+import DoctorRegisterPage from "./src/pages/doctorRegisterPage";
+import FounderPage from "./src/pages/ourFoundersPage";
+import HomeDeliveryMedicine from "./src/pages/demoPage";
+import Insurance from "./src/pages/insurancePage";
+import DoctorProfilePage  from "./src/pages/doctorProfilePage";
+import MainInsurance from "./src/pages/mainInsurancePage";
 
 
 const router = createBrowserRouter([

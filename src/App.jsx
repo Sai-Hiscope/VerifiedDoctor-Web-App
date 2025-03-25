@@ -16,23 +16,22 @@ import MainInsurance from "./pages/mainInsurancePage";
 import MainHeader from "./components/header"
 const App = () => {
   return (
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element={<Homepage />} />
-    //     <Route path="/doctorVerificationpage" element={<DoctorVerification />} />
-    //     <Route path="/findDoctorPage" element={<FindDoctorPage />} />
-    //     <Route path="/loginPage" element={<Login />} />
-    //     <Route path="/individualRegisterPage" element={<IndividualRegisterPage />} />
-    //     <Route path="/sosPage" element={<SosPage />} />
-    //     <Route path="/doctorRegisterPage" element={<DoctorRegisterPage />} />
-    //     <Route path="/FounderPage" element={<FounderPage />} />
-    //     <Route path="/insurancePage" element={<Insurance />} />
-    //     <Route path="/demoPage" element={<HomeDeliveryMedicine />} />
-    //     <Route path="/doctorProfilePage" element={<DoctorProfilePage />} />
-    //     <Route path="/mainInsurancePage" element={<MainInsurance />} />
-    //   </Routes>
-    // </Router>
-    <MainHeader />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/doctorVerificationpage" element={<DoctorVerification />} />
+        <Route path="/findDoctorPage" element={<FindDoctorPage />} />
+        <Route path="/loginPage" element={<Login />} />
+        <Route path="/individualRegisterPage" element={<IndividualRegisterPage />} />
+        <Route path="/sosPage" element={<SosPage />} />
+        <Route path="/doctorRegisterPage" element={<DoctorRegisterPage />} />
+        <Route path="/FounderPage" element={<FounderPage />} />
+        <Route path="/insurancePage" element={<Insurance />} />
+        <Route path="/demoPage" element={<HomeDeliveryMedicine />} />
+        <Route path="/doctorProfilePage" element={<DoctorProfilePage />} />
+        <Route path="/mainInsurancePage" element={<MainInsurance />} />
+      </Routes>
+    </Router>
 
   );
 };

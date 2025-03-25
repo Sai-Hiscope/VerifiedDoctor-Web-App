@@ -12,8 +12,8 @@ import FounderPage from "./ourFoundersPage";
 import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
 import Fotter from "../components/fotter";
 
-import indianStates from "../indianStates";
-import doctorSelect from "../doctorSelect";
+import indianStates from "../data/indianStates";
+import doctorSelect from "../data/doctorSelect";
 
 const FindDoctorPage = () => {
   const [selectedState, setSelectedState] = useState("");

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./doctorProfilePage.css";
-import HeaderFooter from "../components/header";
 
 //images import
 import Appointments from "../assets/Images/doctorprofilepage/appoitment1.png";
@@ -36,7 +35,6 @@ const DoctorProfilePage = () => {
 
   return (
     <div>
-      <HeaderFooter />
 
       {/* Sidebar */}
       <div className={`sidebar ${isSidebarOpen ? "open" : ""}`} id="mySidebar">

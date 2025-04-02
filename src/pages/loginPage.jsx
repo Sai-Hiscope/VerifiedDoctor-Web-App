@@ -1,10 +1,9 @@
 import { useState } from "react";
 import "./loginPage.css";
 import { useNavigate } from "react-router-dom";
-import MainHeader from "../components/header";
 import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
 import Googlelogo from "../assets/icons/google.png";
-import Fotter from "../components/fotter";
+import Fotter from "../components/footer";
 
 const LOGIN_API_URL = "http://localhost:8080/api/auth/login";
 const REGISTER_API_URL = "http://localhost:8080/api/auth/register";
@@ -109,7 +108,6 @@ const Login = () => {
 
   return (
     <>
-      <MainHeader />
       <div className="login-change">
         <img
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/b07d1dfbb02eae67caa3e2cfdf5c9867238ca7e72eb515ca4ba7a5fa71896a65"
@@ -221,7 +219,6 @@ const Login = () => {
         )}
       </div>
 
-      <Fotter value="800px" />
     </>
   );
 };

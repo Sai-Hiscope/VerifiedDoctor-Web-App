@@ -1,38 +1,28 @@
+
+
+
+///Tailwind css used in this region
+
+
+
 import React, { useState, useEffect } from "react";
 import "./Home.css";
-
-import MAinHeader from "../components/header";
-
-import DoctorVerification from "./doctorVerificationpage";
-import FindDoctorPage from "./findDoctorPage";
-import Home from "./Home";
-import Login from "./loginPage";
-import IndividualRegisterPage from "./individualRegisterPage";
-import DoctorRegisterPage from "./doctorRegisterPage";
-import FounderPage from "./ourFoundersPage";
-import HomeDeliveryMedicine from "./demoPage";
-import Fotter from "../components/fotter";
+import { Link } from "react-router-dom";
 // image imports
-
 import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
 import GooglePlayLogo from "../assets/icons/apps/googleplay.png";
 import AppStoreLogo from "../assets/icons/apps/applestore.png";
-
-import CardiologistImg from "../assets/Images/commonImg/Cardiologist.png";
-import GynaecologistImg from "../assets/Images/homeImg/gynaecologist.png";
-import DentistImg from "../assets/Images/homeImg/Dentist.png";
-import GastroenterologistImg from "../assets/Images/homeImg/Gastrologist.png";
-import OrthopedistImg from "../assets/Images/homeImg/Orthopedist.png";
-import DiagnosticsImg from "../assets/Images/homeImg/Diagnostics.png";
-import DermatologistImg from "../assets/Images/homeImg/Dermatologist.png";
-import GeneralPhysicianImg from "../assets/Images/homeImg/general physicians.png";
-import NeurologistImg from "../assets/Images/homeImg/Neurologist.png";
-import PhysiotherapistImg from "../assets/Images/homeImg/physiotherapist.png";
-import PediatricianImg from "../assets/Images/homeImg/Pediatrician.png";
-import PulmonologistImg from "../assets/Images/homeImg/pulmonologist.png";
-
+import CardsSlider from "../components/cardsSlider";
+import indiaUsaStates from "../data/indiaUsaStates";
+import doctorCategories from "../data/doctorCategories";
 function Homepage() {
-  console.log("Contact Page Rendered");
+  const [isHomePageRendered, setIsHomePageRendered] = useState(false);
+
+  useEffect(() => {
+    console.log("Home Page Rendered");
+    setIsHomePageRendered(true);
+  }, []);
+
   // Function to handle button click
   const handleButtonClick = (store) => {
     alert(`Redirecting to ${store}`);
@@ -46,77 +36,8 @@ function Homepage() {
   const [filteredDoctors, setFilteredDoctors] = useState([]);
 
   // States for India and USA
-  const states = {
-    india: [
-      "Andhra Pradesh",
-      "Arunachal Pradesh",
-      "Assam",
-      "Bihar",
-      "Chhattisgarh",
-      "Goa",
-      "Gujarat",
-      "Haryana",
-      "Himachal Pradesh",
-      "Jharkhand",
-      "Karnataka",
-      "Kerala",
-      "Madhya Pradesh",
-      "Maharashtra",
-      "Manipur",
-      "Meghalaya",
-      "Mizoram",
-      "Nagaland",
-      "Odisha",
-      "Punjab",
-      "Rajasthan",
-      "Sikkim",
-      "Tamil Nadu",
-      "Telangana",
-      "Tripura",
-      "Uttar Pradesh",
-      "Uttarakhand",
-      "West Bengal",
-    ],
-    usa: [
-      "California",
-      "Texas",
-      "Florida",
-      "New York",
-      "Illinois",
-      "Pennsylvania",
-      "Ohio",
-      "Georgia",
-      "North Carolina",
-      "Michigan",
-      "New Jersey",
-      "Virginia",
-      "Washington",
-      "Arizona",
-      "Massachusetts",
-      "Tennessee",
-      "Indiana",
-      "Missouri",
-      "Maryland",
-      "Wisconsin",
-    ],
-  };
 
   // List of doctor types
-  const doctorTypes = [
-    "Dentist",
-    "Cardiologist",
-    "Dermatologist",
-    "Pediatrician",
-    "Orthopedic",
-    "General Physician",
-    "ENT Specialist",
-    "Gynecologist",
-    "Urologist",
-    "Neurologist",
-    "Psychiatrist",
-    "Oncologist",
-    "Gastroenterologist",
-  ];
 
   // Update state dropdown based on selected country
   const updateStates = (e) => {
@@ -131,7 +52,7 @@ function Homepage() {
 
     // Filter doctor types based on query
     if (query) {
-      const filtered = doctorTypes.filter((doctor) =>
+      const filtered = doctorCategories.filter((doctor) =>
         doctor.toLowerCase().includes(query.toLowerCase())
       );
       setFilteredDoctors(filtered);
@@ -145,95 +66,6 @@ function Homepage() {
     setSearchQuery(doctor);
     setFilteredDoctors([]); // Hide suggestions after selection
   };
-  const slidesData = [
-    {
-      title: "Cardiologist",
-      img: CardiologistImg,
-      description: "Expert Care for a Healthier Heart",
-    },
-    {
-      title: "Gynaecologist",
-      img: GynaecologistImg,
-      description: "Women's health, expert care",
-    },
-    {
-      title: "Dentist",
-      img: DentistImg,
-      description: "Strong Teeth,Bright Smiles",
-    },
-    {
-      title: "Gastroenterologist",
-      img: GastroenterologistImg,
-      description: "Digestive health, better comfort",
-    },
-    {
-      title: "Orthopedist",
-      img: OrthopedistImg,
-      description: "Stronger bones, better mobility",
-    },
-    {
-      title: "Diagnostics",
-      img: DiagnosticsImg,
-      description: "Precise tests, accurate results.",
-    },
-    {
-      title: "Dermatologist",
-      img: DermatologistImg,
-      description: "Healthy skin, glowing confidence",
-    },
-    {
-      title: "General Physician",
-      img: GeneralPhysicianImg,
-      description: "Comprehensive care, healthy living",
-    },
-    {
-      title: "Neurologist",
-      img: NeurologistImg,
-      description: "Your brain, our priority",
-    },
-    {
-      title: "Physiotherapist",
-      img: PhysiotherapistImg,
-      description: "Restoring movement,improving life",
-    },
-    {
-      title: "Pediatrician",
-      img: PediatricianImg,
-      description: "Caring for children's wellness",
-    },
-    {
-      title: "Pulmonologist",
-      img: PulmonologistImg,
-      description: "Breathing easy, health restored",
-    },
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const slidesToShow = 4;
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex < slidesData.length - slidesToShow ? prevIndex + 1 : 0
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : slidesData.length - slidesToShow
-    );
-  };
-
-  // Auto-slide functionality
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 3000); // 3 seconds interval
-    return () => clearInterval(interval); // Cleanup interval on component unmount
-  }, [currentIndex]);
-
-  useEffect(() => {
-    const handleResize = () => setCurrentIndex(0);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   // doctoropinio
 
@@ -269,186 +101,88 @@ function Homepage() {
 
   return (
     <>
-      <MAinHeader />
-      <>
-        {/* Login/Signup Button (Right Side)
-              <div className="auth-buttons">
-                <button className="login-btn" onClick={handleButtonClick}>
-                  Login/Sign Up
-                </button>
-              </div> */}
-      </>
-
-      {/* padding part */}
-      <>
-        <div className="moving-text-container">
-          <p className="moving-text">
-            With our Verified Doctor app, your health is always within reach.
-          </p>
-        </div>
-      </>
-
-      {/* Dropdown Part */}
-
-      <>
-        <div>
-          {/* Dropdown for country and state */}
-          <div className="dropdown-container">
-            <div className="input-container">
-              <select id="country" value={country} onChange={updateStates}>
-                <option value="">Location</option>
-                <option value="india">India</option>
-                <option value="usa">USA</option>
-              </select>
-            </div>
-
-            <select id="state" value={selectedState} disabled={!country}>
-              <option value="">Select a state</option>
-              {country &&
-                states[country].map((state) => (
-                  <option key={state} value={state}>
-                    {state}
-                  </option>
-                ))}
-            </select>
-          </div>
-
-          {/* Search input for doctor types */}
-          <div className="search-container2">
-            <div className="search-icon"></div>
+      <div className="homepage-container flex flex-col justify-center items-center">
+        <Link to="/findDoctorPage">
+          <div className="searchbar-container">
             <input
               type="text"
-              id="search"
-              value={searchQuery}
-              onChange={handleSearchChange}
-              placeholder="Search doctors, clinics, hospitals, etc."
-              autoComplete="off"
+              placeholder="Search for Doctors near by you"
+              className="searchbar-input"
             />
-            {filteredDoctors.length > 0 && (
-              <div id="dropdown" className="dropdown">
-                {filteredDoctors.map((doctor, index) => (
-                  <div
-                    key={index}
-                    className="dropdown-item"
-                    onClick={() => selectDoctorType(doctor)}
-                  >
-                    {doctor}
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
-      </>
-
-      {/* DropSlider */}
-
-      <>
-        <div className="experts-moving-cont">
-          {/* Heading */}
-          <div className="homediv-h1">
-            <h1>
-              Get Expert Medical Care Online or In-Clinic for Any Health Need
-            </h1>
-          </div>
-          <div className="slider">
-            <div className="slides-container">
-              <div
-                className="slides"
-                style={{
-                  transform: `translateX(-${
-                    currentIndex * (100 / slidesToShow)
-                  }%)`,
-                  gridTemplateColumns: `repeat(${slidesData.length}, 1fr)`,
-                }}
+            <button className="searchbar-button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="searchbar-icon"
               >
-                {slidesData.map((slide, index) => (
-                  <div className="slide" key={index}>
-                    <div className="text-above">{slide.title}</div>
-                    <img src={slide.img} alt={slide.title} />
-                    <div className="text-below">{slide.description}</div>
-                    <div className="buttons">
-                      <button className="blue-button">Online</button>
-                      <button className="pink-button">Clinic</button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="nav-buttons">
-              <button onClick={prevSlide} disabled={currentIndex === 0}>
-                &#10094;
-              </button>
-              <button
-                onClick={nextSlide}
-                disabled={currentIndex === slidesData.length - slidesToShow}
-              >
-                &#10095;
-              </button>
-            </div>
+                <path d="M10 2a8 8 0 105.29 14.29l4.31 4.31a1 1 0 001.41-1.41l-4.31-4.31A8 8 0 0010 2zm0 14a6 6 0 110-12 6 6 0 010 12z" />
+              </svg>
+            </button>
+          </div>
+        </Link>
+
+        {/* Cards Slider Section */}
+        <div className="slideSec">
+          <CardsSlider />
+        </div>
+
+        {/* Opinion Section */}
+        <div
+          className="opinion-container bg-neutral-200 w-3/4 h-90 flex flex-col justify-around items-center p-2
+         rounded-2xl "
+        >
+          <div className="opinion-buttons w-180 p-2 flex justify-between text-1xl">
+            <button
+              onClick={() => showSlides("doctor")}
+              className="cursor-pointer p-2 rounded-sm ease-in-out hover:bg-gray-900  hover:text-amber-50 "
+            >
+              Doctor's Opinion
+            </button>
+            <button
+              onClick={() => showSlides("patient")}
+              className="cursor-pointer p-2 rounded-sm ease-in-out hover:bg-gray-900  hover:text-amber-50 "
+            >
+              Patient's Opinion
+            </button>
+          </div>
+
+          <div className="opinion-header text-2xl">
+            {activeSlides === "doctor"
+              ? "Opinions from Our Doctors"
+              : "Opinions from Our Patients"}
+          </div>
+
+          <div className="opinion-slides text-3xl">
+            <div className="opinion-slide">{slides[currentSlideIndex]}</div>
           </div>
         </div>
-      </>
 
-      {/* doctoropinion */}
-      <>
-        <div className="body3">
-          <div className="container3">
-            {/* Option Buttons */}
-            <div className="option-buttons3">
-              <button onClick={() => showSlides("doctor")}>
-                Doctor's Opinion
-              </button>
-              <button onClick={() => showSlides("patient")}>
-                Patient's Opinion
-              </button>
-            </div>
-
-            {/* Header Text */}
-            <div className="header-text3">
-              {activeSlides === "doctor"
-                ? "Opinions from Our Doctors"
-                : "Opinions from Our Patients"}
-            </div>
-
-            {/* Slides */}
-            <div className="slides-container3">
-              <div className="slide3">{slides[currentSlideIndex]}</div>
-            </div>
+        {/* App Download Section */}
+        <div className="download-container m-8 w-3/4 flex justify-evenly  items-center p-2 rounded-2xl">
+          <div className="app-preview">
+            <img src={VDrLogo} height="400px" width="900px" alt="App Preview" />
           </div>
-        </div>
-        {/* lastpart */}
-        <div className="body4">
-          <div className="container4">
-            <div className="preview">
-              <img
-                src={VDrLogo}
-                height="400px"
-                width="900px"
-                alt="App Preview"
-              />
-            </div>
-            <div className="info">
-              <h2 className="title">Download VDr app</h2>
-              <p className="description">
-                Consult with India's top doctors via video on VDr app. Get 24/7
-                access to healthcare.
-              </p>
-              <div className="store-buttons">
-                <div className="store-button">
+          <div className="app-info">
+            <h2 className="app-title">Download VDr App</h2>
+            <p className="app-description">
+              Consult with India's top doctors via video on VDr app. Get 24/7
+              access to healthcare.
+            </p>
+            <div className="store-buttons">
+              <div className="store-button">
+                <Link>
                   <img src={GooglePlayLogo} alt="Google Play Store" />
-                </div>
-                <div className="store-button">
-                  <img src={AppStoreLogo} alt="Apple app Store" />
-                </div>
+                </Link>
+              </div>
+              <div className="store-button">
+                <Link>
+                  <img src={AppStoreLogo} alt="Apple App Store" />
+                </Link>
               </div>
             </div>
           </div>
         </div>
-        {/* Footer */}
-
-        <Fotter value="1500px" />
-      </>
+      </div>
     </>
   );
 }

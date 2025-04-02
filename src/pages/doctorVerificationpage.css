@@ -48,15 +48,6 @@ height: 5rem;}
   width: 20rem;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #ffffff;
-}
 
 .hero-image1{
   height: 350px;
@@ -106,7 +97,7 @@ input[type="text"], input[type="file"], select, .doctorVerification-textarea {
   width: 100%;
   padding: 10px;
   font-size: 14px;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   border-radius: 4px;
   box-sizing: border-box;
 }

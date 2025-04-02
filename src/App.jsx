@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 import "./App.css";
 import Homepage from "./pages/Home";
@@ -13,26 +13,43 @@ import HomeDeliveryMedicine from "./pages/demoPage";
 import Insurance from "./pages/insurancePage";
 import DoctorProfilePage from "./pages/doctorProfilePage";
 import MainInsurance from "./pages/mainInsurancePage";
-import MainHeader from "./components/header"
+import MainHeader from "./components/header";
+import Footer from "./components/footer";
+
 const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/doctorVerificationpage" element={<DoctorVerification />} />
-        <Route path="/findDoctorPage" element={<FindDoctorPage />} />
-        <Route path="/loginPage" element={<Login />} />
-        <Route path="/individualRegisterPage" element={<IndividualRegisterPage />} />
-        <Route path="/sosPage" element={<SosPage />} />
-        <Route path="/doctorRegisterPage" element={<DoctorRegisterPage />} />
-        <Route path="/FounderPage" element={<FounderPage />} />
-        <Route path="/insurancePage" element={<Insurance />} />
-        <Route path="/demoPage" element={<HomeDeliveryMedicine />} />
-        <Route path="/doctorProfilePage" element={<DoctorProfilePage />} />
-        <Route path="/mainInsurancePage" element={<MainInsurance />} />
-      </Routes>
-    </Router>
-
+    <>
+      <Router>
+        <MainHeader />
+        <div className="content-wrapper ">
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route
+              path="/doctorVerificationpage"
+              element={<DoctorVerification />}
+            />
+            <Route path="/findDoctorPage" element={<FindDoctorPage />} />
+            <Route path="/loginPage" element={<Login />} />
+            <Route
+              path="/individualRegisterPage"
+              element={<IndividualRegisterPage />}
+            />
+            <Route path="/sosPage" element={<SosPage />} />
+            <Route
+              path="/doctorRegisterPage"
+              element={<DoctorRegisterPage />}
+            />
+            <Route path="/FounderPage" element={<FounderPage />} />
+            <Route path="/insurancePage" element={<Insurance />} />
+            <Route path="/demoPage" element={<HomeDeliveryMedicine />} />
+            <Route path="/doctorProfilePage" element={<DoctorProfilePage />} />
+            <Route path="/mainInsurancePage" element={<MainInsurance />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+      {/* <Fotter/> */}
+    </>
   );
 };
 

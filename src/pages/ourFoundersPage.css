@@ -1,9 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* .founderPage-main{
+    width: 100vw;
+    min-height: 100vh;
+    height: fit-content;
+background: #000;
+} */
 .founderpage-founder {
     width: 800px;
     position: absolute;
@@ -89,7 +89,6 @@
     top: 750px;
     left: 0%;
 }
-
 
 .founderpage-developers-ul {
     display: grid; 

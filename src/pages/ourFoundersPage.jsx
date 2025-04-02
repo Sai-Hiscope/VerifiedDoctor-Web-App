@@ -1,8 +1,7 @@
 import React from "react";
 import "./ourFoundersPage.jsx.css";
-import MainHeader from "../components/header";
 import Cards from "../components/Cards";
-import Fotter from "../components/fotter";
+import Fotter from "../components/footer";
 
 // Image imports
 import Anji from "../assets/Images/foundersImg/anji.jpg";
@@ -41,8 +40,7 @@ const FounderPage = () => {
 
   return (
     <>
-      <MainHeader />
-      <div className="founderPage-main">
+      <div className="founderPage-main ">
         <div className="founderpage-founder">
           <div className="founderpage-founder-div-img">
             <img
@@ -75,8 +73,6 @@ const FounderPage = () => {
         </div>
       </div>
 
-      {/* Footer Section */}
-      <Fotter value="1800px" />
     </>
   );
 };

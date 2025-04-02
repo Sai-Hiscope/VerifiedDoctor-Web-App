@@ -10,14 +10,14 @@
     color: rgba(10, 228, 10, 0.938);
   }
   
-  body {
+  /* body {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-  }
+  } */
   
   .Insurancecontainer{
     background: #fff;
@@ -58,10 +58,7 @@
 
   
   @media (prefers-color-scheme: light) {
-    :root {
-      color: #213547;
-      background-color: #ffffff;
-    }
+    
     a:hover {
       color: #747bff;
     }

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./findDoctorPage.css";
-import HeaderFooter from "../components/header";
 
 import DoctorVerification from "./doctorVerificationpage";
 import Home from "./Home";
@@ -10,7 +9,7 @@ import SosPage from "./sosPage";
 import DoctorRegisterPage from "./doctorRegisterPage";
 import FounderPage from "./ourFoundersPage";
 import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
-import Fotter from "../components/fotter";
+import Fotter from "../components/footer";
 
 import indianStates from "../data/indianStates";
 import doctorSelect from "../data/doctorSelect";
@@ -27,7 +26,6 @@ const FindDoctorPage = () => {
 
   return (
     <>
-      <HeaderFooter />
       <div className="search-section">
         <form onSubmit={handleSubmit}>
           <div className="location-wrapper">
@@ -93,7 +91,6 @@ const FindDoctorPage = () => {
         {print && <h1 className="findDoctor-print">{print}</h1>}
       </div>
 
-      <Fotter value="700px" />
     </>
   );
 };

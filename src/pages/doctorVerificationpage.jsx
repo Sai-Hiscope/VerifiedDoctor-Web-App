@@ -8,9 +8,8 @@ import SosPage from "./sosPage";
 import DoctorRegisterPage from "./doctorRegisterPage";
 import Demo from "./demoPage";
 import { useNavigate } from "react-router-dom";
-import MainHeader from "../components/header";
 import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
-import Fotter from "../components/fotter";
+import Fotter from "../components/footer";
 
 const API_URL =
   "https://v1.nocodeapi.com/sandeephst/google_sheets/zUIvNpLDXSoUrMbx";

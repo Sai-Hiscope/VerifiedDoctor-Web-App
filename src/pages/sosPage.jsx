@@ -10,12 +10,13 @@ import IndividualRegisterPage from "./individualRegisterPage";
 import DoctorRegisterPage from "./doctorRegisterPage";
 import FounderPage from "./ourFoundersPage";
 import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
-import Fotter from "../components/fotter";
+import Fotter from "../components/footer";
 
 const SosPage = () => {
   const [count, setCount] = useState("Double click");
   const [sosActive, setSosActive] = useState(false);
   const [countdownStarted, setCountdownStarted] = useState(false);
+  const[infoMessege,setInfoMessege]=useState("");
   const audioRef = useRef(null);
   const countdownRef = useRef(null); // Ref to keep track of countdown interval
 
@@ -29,6 +30,7 @@ const SosPage = () => {
       } else {
         clearInterval(countdownRef.current);
         setCount("SOS Activated");
+        setInfoMessege("Your SOS has been activated. Contacting emergency services... and your family members");
         setSosActive(true);
         playMusic();
         setCountdownStarted(false); // Ensure countdown state is reset
@@ -51,11 +53,12 @@ const SosPage = () => {
     setSosActive(false);
     setCountdownStarted(false);
     setCount("Double click");
+    setInfoMessege("")
   };
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
 
       {/* SOS part */}
       <div className="sos-container">
@@ -65,17 +68,17 @@ const SosPage = () => {
           </button>
         </div>
         <h2 className="div1-h2">SOS EMERGENCY</h2>
+        <div className="infoMessege">{infoMessege}</div>
         {(sosActive || countdownStarted) && (
           <>
-            <button className="stop_btn" onClick={stopSos}>
-              X
+            <button className="stop_btn " onClick={stopSos}>
+              ❌
             </button>
           </>
         )}
       </div>
 
       {/* Footer */}
-      <Fotter value="700px" />
     </>
   );
 };

@@ -7,10 +7,9 @@ import FormPage1 from "../components/insuranceFormPage1";
 import FormPage2 from "../components/insuranceFormPage2";
 import FormPage3 from "../components/insuranceFormPage3";
 import Pagination from "../components/Pagination";
-import MainHeader from "../components/header";
 import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
 import Googlelogo from "../assets/icons/google.png";
-import Fotter from "../components/fotter";
+import Fotter from "../components/footer";
 
 const Insurance = () => {
   const [page, setPage] = useState(0);

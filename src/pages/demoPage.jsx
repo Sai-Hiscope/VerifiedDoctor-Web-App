@@ -1,6 +1,5 @@
 import React from "react";
 import "./demoPage.css";
-import MainHeader from "../components/header";
 import DoctorVerification from "./doctorVerificationpage";
 import FindDoctorPage from "./findDoctorPage";
 import Home from "./Home";
@@ -9,7 +8,7 @@ import IndividualRegisterPage from "./individualRegisterPage";
 import DoctorRegisterPage from "./doctorRegisterPage";
 import FounderPage from "./ourFoundersPage";
 import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
-import Fotter from "../components/fotter";
+import Fotter from "../components/footer";
 
 // import MainHeader from "./header";
 const HomeDeliveryMedicine = () => {

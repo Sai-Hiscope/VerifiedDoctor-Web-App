@@ -1,17 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
+/* body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 10vh;
   background-color: #f4f4f4;
-}
+} */
 
 .container {
   background: #fff;
@@ -85,20 +80,16 @@ body {
 .role-btn:hover {
   background: #218838;
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
+
+/* body {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: #f4f4f4;
-}
+} */
 
 .container {
   background: #fff;

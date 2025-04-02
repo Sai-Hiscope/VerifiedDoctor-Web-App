@@ -1,1 +1,20 @@
 @import "tailwindcss";
+/* @import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities"; */
+:root {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: fit-content;
+  min-height: 100vh;
+  position: relative;
+}
+

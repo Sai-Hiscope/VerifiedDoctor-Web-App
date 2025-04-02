@@ -1,27 +1,13 @@
-/* General Styles */
-:root {
-  --primary-color: #000;
-  --background-color: #fff;
-  --text-color: #000;
-  padding: 0%;
-  margin: 0%;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-color: #fff;
-    --background-color: #000;
-    --text-color: #fff;
-  }
-}
 
 .sos-container {
   width: 100%;
   height: 400px;
   position: absolute;
   z-index: 10;
-  top: 260px;
+  /* top: 260px; */
   left: 0%;
+  margin-top: 9em;
+  /* background: #000; */
 }
 
 /* sos part */
@@ -113,3 +99,11 @@
   border: 1px solid red;
 }
 
+.infoMessege{
+    position: absolute;
+    top: 90%;
+    left: 20%;
+  font-size: 20px;
+  font-weight: 700;
+  color: rgb(0, 157, 0);
+}

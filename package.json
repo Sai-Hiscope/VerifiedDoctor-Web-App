@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prepare": "npm ci && npm install vite@latest react@latest react-dom@latest react-router-dom@latest"
+    "prepare": "npm install"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",

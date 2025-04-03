@@ -1,16 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
-import CardiologistImg from "../assets/images/commonImg/Cardiologist.png";
-import GynaecologistImg from "../assets/images/homeImg/gynaecologist.png";
-import DentistImg from "../assets/images/homeImg/Dentist.png";
-import GastroenterologistImg from "../assets/images/homeImg/Gastrologist.png";
-import OrthopedistImg from "../assets/images/homeImg/Orthopedist.png";
-import DiagnosticsImg from "../assets/images/homeImg/Diagnostics.png";
-import DermatologistImg from "../assets/images/homeImg/Dermatologist.png";
+import CardiologistImg from "../assets/Images/commonImg/Cardiologist.png";
+import GynaecologistImg from "../assets/Images/homeImg/gynaecologist.png";
+import DentistImg from "../assets/Images/homeImg/Dentist.png";
+import GastroenterologistImg from "../assets/Images/homeImg/Gastrologist.png";
+import OrthopedistImg from "../assets/Images/homeImg/Orthopedist.png";
+import DiagnosticsImg from "../assets/Images/homeImg/Diagnostics.png";
+import DermatologistImg from "../assets/Images/homeImg/Dermatologist.png";
 import GeneralPhysicianImg from "../assets/Images/homeImg/general physicians.png";
-import NeurologistImg from "../assets/images/homeImg/Neurologist.png";
-import PhysiotherapistImg from "../assets/images/homeImg/physiotherapist.png";
-import PediatricianImg from "../assets/images/homeImg/Pediatrician.png";
-import PulmonologistImg from "../assets/images/homeImg/pulmonologist.png";
+import NeurologistImg from "../assets/Images/homeImg/Neurologist.png";
+import PhysiotherapistImg from "../assets/Images/homeImg/physiotherapist.png";
+import PediatricianImg from "../assets/Images/homeImg/Pediatrician.png";
+import PulmonologistImg from "../assets/Images/homeImg/pulmonologist.png";
 
 const cardsData = [
   {
@@ -75,5 +75,4 @@ const cardsData = [
   },
 ];
 
-
-export default cardsData
+export default cardsData;

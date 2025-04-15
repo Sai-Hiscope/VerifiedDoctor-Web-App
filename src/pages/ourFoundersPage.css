@@ -1,135 +1,100 @@
-/* .founderPage-main{
+.founderPage-main{
+    padding: 2%;
+    /* margin-top: 10%; */
     width: 100vw;
-    min-height: 100vh;
-    height: fit-content;
-background: #000;
-} */
-.founderpage-founder {
-    width: 800px;
-    position: absolute;
-    height: 300px;
-    left: 250px;
-    top: 280px;
-    border-radius: 15px;
-    background-color: rgba(244, 244, 245, 0.404);
-    box-shadow: 3px 3px 10px rgb(196, 197, 197);
-    background-image: linear-gradient(#fff, #f0eded);
-    cursor: pointer;
-}
+    height: auto;
+  }
+  .founderpage-founder{
+    background-color: white;
+    width: 60%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 3%;
+    margin-top: 20px;
+    margin-left: 25%;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px rgba(202, 201, 201, 0.507);
+    transition: transform 0.3s ease;
+    gap: 20px;
+  }
+  .founderpage-founder-img{
+    width: 240px;
+    height: 240px;
+    transition: transform 0.3s ease;
+  }
+  .founderpage-founder-h2{
+    align-content: center;
+  }
 
-.founderpage-founder:hover {
-    box-shadow: 0 10px 20px rgb(187, 185, 185);
-}
-
-.founderpage-founder::before {
-    background-image: linear-gradient(145deg, #fff, #f0eded, #faf4f4, #faf6f6, #fff);
-    animation: gradient-border 2s infinite;
-}
-
-.founderpage-founder-div-img {
-    width: 200px;
-    height: 210px;
-    position: relative;
-    left: 50px;
-    top: 40px;
-    object-fit: cover;
+  
+  .founderpage-founder-div-img{
+    width: 220px;
+    height: 220px;
     overflow: hidden;
     border-radius: 10px;
-}
-
-.founderpage-founder-div-img:hover {
-    box-shadow: 2px 2px 10px rgb(196, 197, 197);
-    cursor: pointer;
-}
-
-.founderpage-founder-img {
-    width: 200px;
-    height: 210px;
-    object-fit: cover;
-    transition: 0.7s;
-    display: block;
-}
-
-.founderpage-founder-img:hover {
-    transform: scale(1.1);
-}
-
-.founderpage-developers {
-    position: absolute;
-}
-
-.founderpage-founder-h2 {
-    position: absolute;
-    left: 400px;
-    top: 40px;
-    width: 200px;
-    font-size: 20px;
-    font-weight: 700;
-}
-
-.founderpage-developer-h2 {
-    position: absolute;
-    top: 650px;
+  }
+  .founderpage-founder-p {
+    font-weight: 200;
+    font-size: medium;
+  }
+  @media(max-width:700px){
+    .founderpage-founder-div-img{
+      width: 150px;
+      height: 200px;
+      margin-left: -30%;
+      border-radius: 50%;
+    }
+    
+  }
+  
+  
+  .founderpage-founder:hover,
+  .founderpage-founder-img:hover {
+    transform: scale(1.02);
+  }
+  
+  .founderpage-developer-h2 {
     font-weight: 700;
     color: rgb(109, 109, 153);
     left: 170px;
     text-decoration: underline;
-}
-
-.founderpage-founder-ul {
-    position: absolute;
-    left: 300px;
-    top: 130px;
-    list-style: none;
-}
-
-.founderpage-developers {
+    margin-top: 50px;
+  }
+  
+  .founderpage-developers {
     width: 100%;
-    position: absolute;
-    top: 750px;
-    left: 0%;
-}
-
-.founderpage-developers-ul {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 20px; 
+    margin-top: 20px;
+  }
+  
+  .founderpage-developers-ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 20px;
     padding: 10px;
-    margin: 0 auto; 
-    max-width: 100%; 
-    list-style: none; 
-}
-
-
-@keyframes gradient-border {
-    0% {
-        background-position: 0% 0%;
-    }
-
-    100% {
-        background-position: 100% 100%;
-    }
-}
-
-.founderpage-developers-ul-ul li:hover {
+    margin: 0 auto;
+    max-width: 100%;
+    list-style: none;
+  }
+  
+  .founderpage-developers-ul-ul li:hover {
     transform: scale(1.02);
     box-shadow: 0 10px 20px rgb(187, 185, 185);
     border-radius: 10px;
     cursor: pointer;
-}
-
-.founderpage-developers-ul-ul li img {
+  }
+  
+  .founderpage-developers-ul-ul li img {
     width: 150px;
     height: 150px;
     object-fit: cover;
     border-radius: 10px;
     transition: 1s;
     overflow: hidden;
-}
-
-.founderpage-developers-ul-ul li img:hover {
+  }
+  
+  .founderpage-developers-ul-ul li img:hover {
     box-shadow: 0 10px 20px rgb(187, 185, 185);
     border-radius: 10px;
     cursor: pointer;
-}
-
+  }

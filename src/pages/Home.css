@@ -438,11 +438,32 @@ label {
   font-size: 2rem;
   margin-bottom: 10px;
 }
-
 .app-description {
   font-size: 1rem;
   margin-bottom: 20px;
 }
+@media(max-width:800px){
+  .app-title{
+    font-size: 1.5rem;
+  }
+  .app-preview img {
+    width: 150px;
+    height: auto;
+  }
+  .app-description {
+    font-size: 10px;
+  }
+  .cursor-pointer{
+    font-size: 10px;
+    color: #000000;
+    background-color:white;
+  }
+  .cursor-pointer:hover{
+    background-color: rgb(163, 163, 163);
+  }
+}
+
+
 
 .store-buttons {
   display: flex;
@@ -480,6 +501,13 @@ label {
   transition: all 0.3s ease-in-out;
   /* background: #000; */  border: 1px solid rgba(0, 0, 0, 0.050);
 
+}
+@media(max-width:800px){
+  .searchbar-container{
+    padding: 0.15rem 0.5rem;
+    width: 20vw;
+    min-width: 25rem;
+  }
 }
 
 .searchbar-input {
@@ -523,4 +551,50 @@ label {
   width: 1.75rem;
   height: 1.75rem;
   fill: #fff;
+}
+.buttonapos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50%;
+  margin-top: 20px;
+  margin-left: 0%;
+  width: 100%;
+}
+@media(max-width:1100px){
+  .opinion-slides{
+    font-size: 25px;
+  }
+}
+
+@media(max-width:800px){
+  .opinion-header{
+    font-size:20px;
+  }
+  .opinion-slides{
+    font-size: 15px;
+  }
+  
+}
+.opinion-container{
+  background: linear-gradient(-45deg, #00c6ff, #38bdf8, #10b981, #00c6ff);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  padding: 2rem;
+  border-radius: 16px;
+  color:black;
+}
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.opinion-container:hover{
+  color: #000;
 }

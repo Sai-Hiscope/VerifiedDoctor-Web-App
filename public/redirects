@@ -1,0 +1,8 @@
+# Let files like manifest, service worker, and assets load properly
+/manifest.webmanifest   /manifest.webmanifest   200
+/sw.js                  /sw.js                  200
+/offline.html           /offline.html           200
+/icons/*                /icons/:splat           200
+
+# Then fallback everything else to SPA routing
+/*                      /index.html             200

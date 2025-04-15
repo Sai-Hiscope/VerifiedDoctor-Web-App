@@ -1,0 +1,175 @@
+/* Doctor Card1 Styles */
+  .doctor-card1 {
+    max-width: 800px;
+    height: auto;
+    margin: 60px auto;
+    padding: 2rem 1.5rem 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow: hidden; /* Show only within card */
+    z-index: 0;
+  }
+  
+  /* ✅ Watermark applied using ::before */
+  .doctor-card1::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/Images/commonImg/VDrlogoBg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    opacity: 0.06; /* Adjust to make it more or less visible */
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  /* ✅ All content stays on top of the watermark */
+  .doctor-card1 > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+  
+  
+  .logo {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 100px;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    height: auto;
+  }
+  
+  .doctor-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-top: 2.5rem;
+  }
+  
+  h2 {
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  
+  .details {
+    width: 100%;
+    margin-top: 1rem;
+    padding-left: 16rem;
+    
+    
+  }
+  
+  .details p {
+    font-size: 1rem;
+    margin: 8px 0;
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* text-align: center; */
+    
+  }
+  
+  .details p strong {
+    min-width: 140px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .experience {
+    margin-top: 1rem;
+    font-style: italic;
+    color: #444;
+    width: 100%;
+    text-align: center;
+    
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  
+  .book-btn1{
+    padding: 0.6rem 1.2rem;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .rate-btn1 {
+    margin-left: 10px;
+    /* margin-top: 1rem; */
+    
+    padding: 0.6rem 1.2rem;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    background-color: #4caf50;
+    color: white;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .book-btn:hover,
+  .rate-btn:hover {
+    background-color: #3e8e41;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 500px) {
+    .doctor-card {
+      max-width: 90%;
+      padding: 1.2rem;
+    }
+  
+    .button-group {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .book-btn1 {
+      width: 100%;
+    }
+    .rate-btn1 {
+      width: 100%;
+    }
+  
+    .logo {
+      width: 100px;
+    }
+  
+    .doctor-img {
+      width: 100px;
+      height: 100px;
+    }
+    .details {
+        width: 100%;
+        margin-top: 1rem;
+        padding-left: 6rem;
+    }
+    .details p strong {
+      min-width: 120px;
+    }
+  }
+  

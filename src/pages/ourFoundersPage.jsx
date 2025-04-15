@@ -1,5 +1,5 @@
 import React from "react";
-import "./ourFoundersPage.jsx.css";
+import "./ourFoundersPage.css";
 import Cards from "../components/Cards";
 import Fotter from "../components/footer";
 
@@ -39,41 +39,34 @@ const FounderPage = () => {
   ];
 
   return (
-    <>
-      <div className="founderPage-main ">
-        <div className="founderpage-founder">
-          <div className="founderpage-founder-div-img">
-            <img
-              className="founderpage-founder-img"
-              src={Sai}
-              alt="Sai Madiraju"
-            />
-          </div>
-          <h2 className="founderpage-founder-h2">
-            Sai Madiraju <br />
-            Founder & CEO
-          </h2>
-          <ul className="founderpage-founder-ul">
-            <li>
-              Founder Of: Hiscope Cyberlinks
-              <br />
-              EVAAP (Employment Verification and Academic Proofing)
-              <br />
-              VDr (Verified Doctor)
-            </li>
-          </ul>
+    <div className="founderPage-main">
+      <div className="founderpage-founder">
+        <div className="founderpage-founder-div-img">
+          <img
+            className="founderpage-founder-img"
+            src={Sai}
+            alt="Sai Madiraju"
+          />
         </div>
-        <h2 className="founderpage-developer-h2">DEVELOPERS</h2>
-        <div className="founderpage-developers">
-          <ul className="founderpage-developers-ul">
-            {founderDetails.map((founder, index) => (
-              <Cards key={index} details={founder} />
-            ))}
-          </ul>
-        </div>
+        <h2 className="founderpage-founder-h2">
+          Sai Madiraju <br />
+          Founder & CEO
+          <p className="founderpage-founder-p">
+            Founder Of: Hiscope Cyberlinks <br />
+            EVAAP (Employment Verification and Academic Proofing) <br />
+            VDr (Verified Doctor)
+          </p>
+        </h2>
       </div>
-
-    </>
+      <h2 className="founderpage-developer-h2">DEVELOPERS</h2>
+      <div className="founderpage-developers">
+        <ul className="founderpage-developers-ul">
+          {founderDetails.map((founder, index) => (
+            <Cards key={index} details={founder} />
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 

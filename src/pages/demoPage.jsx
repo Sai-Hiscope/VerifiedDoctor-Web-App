@@ -23,7 +23,7 @@ const HomeDeliveryMedicine = () => {
         <h1 className="bounce">COMING SOON....</h1>
       </div>
       <div className="home-delivery-medicine-logo">
-        <img src={VDrLogo} alt="VDr-logo" />
+        <img src={VDrLogo} alt="VDrlogo" />
       </div>
 
       <Fotter value="700px" />

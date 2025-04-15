@@ -131,7 +131,7 @@ function Homepage() {
           className="opinion-container bg-neutral-200 w-3/4 h-90 flex flex-col justify-around items-center p-2
          rounded-2xl "
         >
-          <div className="opinion-buttons w-180 p-2 flex justify-between text-1xl">
+          <div className="buttonapos">
             <button
               onClick={() => showSlides("doctor")}
               className="cursor-pointer p-2 rounded-sm ease-in-out hover:bg-gray-900  hover:text-amber-50 "
@@ -145,6 +145,7 @@ function Homepage() {
               Patient's Opinion
             </button>
           </div>
+        
 
           <div className="opinion-header text-2xl">
             {activeSlides === "doctor"

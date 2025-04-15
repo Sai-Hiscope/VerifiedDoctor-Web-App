@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./footer.css";
 import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
+import { FaArrowAltCircleUp } from "react-icons/fa";
+
 import {
   FaFacebookF,
   FaTwitter,
@@ -11,21 +13,19 @@ import {
 
 const Footer = () => {
   return (
+    
     <footer className="footer-container">
-      <div className="footer-logo-section">
+      <div className="all-components">
         <Link to="/">
           <img src={VDrLogo} alt="VDr Logo" className="footer-logo" />
         </Link>
-      </div>
-      
-
+     
       <div className="footer-bottom">
-      <p className="footer-description">
+      <p className="first-text">
         VDr is committed to connecting you with top healthcare professionals.
       </p>
-        <p>&copy; {new Date().getFullYear()} VDr. All Rights Reserved.</p>
-      </div>
-      <div className="footer-social">
+        <p className="second-text">&copy; {new Date().getFullYear()} VDr. All Rights Reserved.</p>
+        </div>
         <div className="social-icons">
           <a href="https://facebook.com" target="_blank" rel="noreferrer">
             <FaFacebookF />
@@ -39,8 +39,12 @@ const Footer = () => {
           <a href="https://instagram.com" target="_blank" rel="noreferrer">
             <FaInstagram />
           </a>
+          <div className="scrool-to-top">
+            <a href="#">
+        <FaArrowAltCircleUp /></a>
         </div>
-      </div>
+        </div>
+        </div>
     </footer>
   );
 };

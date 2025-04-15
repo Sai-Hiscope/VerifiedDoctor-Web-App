@@ -1,7 +1,7 @@
 .expert-slider-section {
   position: relative;
   padding: 2em;
-  margin: 1rem;
+  margin: 3rem;
   border-radius: 10px;
   height: 26em;
 }
@@ -12,18 +12,28 @@
   color: #121111;
   font-weight: bold;
 }
+@media(max-width:800px){
+  .section-title{
+    font-size: 1rem;
+  }
+}
 .slider-container {
   height: 24em;
   display: flex;
   flex-direction: row;
-  overflow-x: auto; /* Enable horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Optional, for smooth snapping to each card */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory; 
   padding: 1rem;
   gap: 1rem;
-  -webkit-overflow-scrolling: touch; /* For better scrolling on mobile */
-scrollbar-width: none; /* Hides scrollbar in Firefox */
+  -webkit-overflow-scrolling: touch; 
+scrollbar-width: none; 
 }
 
+@media(max-width:600px){
+  .slider-container{
+    width: 18em;
+  }
+}
 .slide-item {
   overflow: hidden;
   flex: 0 0 auto;
@@ -122,6 +132,12 @@ scrollbar-width: none; /* Hides scrollbar in Firefox */
   transform: translateY(-50%);
   pointer-events: none;
   /* display: none; */
+}
+@media(max-width:600px){
+  .slider-navigation{
+    width: 100%;
+    right: 1.5%;
+  }
 }
 
 .slider-navigation button {

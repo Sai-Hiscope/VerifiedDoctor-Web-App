@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./findDoctorPage.css";
 
+import Header from "../components/header";
 import DoctorVerification from "./doctorVerificationpage";
 import Home from "./Home";
 import Login from "./loginPage";
@@ -10,87 +11,116 @@ import DoctorRegisterPage from "./doctorRegisterPage";
 import FounderPage from "./ourFoundersPage";
 import VDrLogo from "../assets/Images/commonImg/VDrlogo.png";
 import Fotter from "../components/footer";
+import DoctorId from "./doctorID";
+import { useNavigate } from "react-router-dom";
 
-import indianStates from "../data/indianStates";
-import doctorSelect from "../data/doctorSelect";
+const GET_DOCTOR_API_URL = "http://localhost:2003/api/doctors/getdoctors";
+
 
 const FindDoctorPage = () => {
+  const defaultDoctor = {
+    id: 1,
+    fullName: "Dr. John Doe",
+    specialization: "Cardiologist",
+    experience: "10 years",
+    location: "New York",
+    rating: 9.5,
+    doctorPhoto: null, 
+  }
+  const [searchQuery, setSearchQuery] = useState("");
   const [selectedState, setSelectedState] = useState("");
-  const [selectDoctor, setSelectDoctor] = useState("");
-  const [print, setPrint] = useState("Select State and Doctor to find doctors");
+  const [doctors, setDoctors] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
+  const [doctorId, setDoctorId] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setPrint(`welcome ${selectedState} ${selectDoctor}`);
-  };
 
+  useEffect(() => {
+    const fetchDoctors = async () => {
+      try {
+        const response = await fetch(GET_DOCTOR_API_URL);
+        const data = await response.json();
+        setDoctors(data);
+        console.log("Fetched doctors:", data);
+      } catch (error) {
+        console.error("Error fetching doctors:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchDoctors();
+  }, []);
+
+  const filteredDoctors = doctors.filter(
+    (doctor) =>
+      doctor.specialization.toLowerCase().includes(searchQuery.toLowerCase()) &&
+      (selectedState === "" || doctor.location.includes(selectedState))
+  );
+
+  const doctorProfile = (doctor) => {
+    alert("Doctor Profile Clicked!");
+    navigate(`/doctorID/${doctor.id}`, { state: { doctor } });
+  }
   return (
     <>
-      <div className="search-section">
-        <form onSubmit={handleSubmit}>
-          <div className="location-wrapper">
-            <div className="location-input" role="search">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/51e5038e13b1be9080f0941a0b9f99ba3369e0afe7df7be02f721dfe4a71bc1d?placeholderIfAbsent=true&apiKey=9ccc22c2724c427c8498a732bb366bf4"
-                className="location-icon"
-                alt="Location icon"
-              />
-              <label htmlFor="location-search" className="visually-hidden">
-                Search by location
-              </label>
-              <select
-                id="location-search"
-                className="location-select"
-                value={selectedState}
-                onChange={(e) => setSelectedState(e.target.value)}
-              >
-                <option value="" className="findDoctor-location-option">
-                  Select State
-                </option>
-                {indianStates.map((state) => (
-                  <option key={state} value={state}>
-                    {state}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-          <div className="search-wrapper">
-            <div className="search-input" role="search">
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/d907adf33f7d0fd47c62d89ac30bcc3a092e2eae4eedc005df53ec6c6d882fa0?placeholderIfAbsent=true&apiKey=9ccc22c2724c427c8498a732bb366bf4"
-                className="search-icon"
-                alt="Search icon"
-              />
-              <label htmlFor="doctor-search" className="visually-hidden">
-                Search for doctors, clinics, hospitals, or specializations
-              </label>
-              <select
-                id="doctor-search"
-                className="doctor-select"
-                value={selectDoctor}
-                onChange={(e) => setSelectDoctor(e.target.value)}
-              >
-                <option value="" className="findDoctor-search-option">
-                  Select Doctor
-                </option>
-                {doctorSelect.map((doctor) => (
-                  <option key={doctor} value={doctor}>
-                    {doctor}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-          <button type="submit" className="findDoctor-submit">
-            Submit
-          </button>
-        </form>
-        {print && <h1 className="findDoctor-print">{print}</h1>}
-      </div>
+      <div className="header-placeholder"></div>
+      <div className="main-container">
+        <div className="search-bar-container1">
+          <input
+            type="text"
+            placeholder="Search by specialization"
+            className="specialization-search1"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
 
+          <select
+            className="state-dropdown"
+            value={selectedState}
+            onChange={(e) => setSelectedState(e.target.value)}
+          >
+            <option value="">Select State</option>
+            <option value="Maharashtra">Maharashtra</option>
+            <option value="Karnataka">Karnataka</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Tamil Nadu">Tamil Nadu</option>
+            <option value="Uttar Pradesh">Uttar Pradesh</option>
+            <option value="West Bengal">West Bengal</option>
+            <option value="Gujarat">Gujarat</option>
+            <option value="Rajasthan">Rajasthan</option>
+          </select>
+        </div>
+
+        <div className="doctor-list">
+          {loading ? (
+            <p>Loading doctors...</p>
+          ) : filteredDoctors.length > 0 ? (
+            filteredDoctors.map((doctor) => (
+              <div key={doctor.id} className="doctor-card" onClick={() => doctorProfile(doctor)}>
+               <img
+                  src={`data:image/jpeg;base64,${doctor.doctorPhoto}`}
+                    alt={`Dr. ${doctor.fullName}`}
+                   className="doctor-image"
+               />
+
+                <div className="doctor-info">
+                  <p>Dr. {doctor.fullName}</p>
+                  <p>{doctor.specialization}</p>
+                  <p>{doctor.experience}</p>
+                  <p>{doctor.location}</p>
+                  <p>⭐ {doctor.rating} / 10</p>
+                </div>
+                <button className="book-btn">Book Appointment</button>
+              </div>
+            ))
+          ) : (
+            <p className="no-results">
+              No doctors found. Please refine your search.
+            </p>
+          )}
+        </div>
+      </div>
     </>
   );
 };
